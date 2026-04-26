@@ -52,17 +52,20 @@ export default function DonatePage() {
   }
 
   return (
-    <div className="overflow-hidden">
+    <main>
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 pt-40 pb-24">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
+      <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 pt-32 pb-20 md:pt-40 md:pb-24">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMxZTQwYWYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDE2djEwaC0xMFYxNmgxMHpNMTQgNDZ2MTBoMTBWNDZIMTR6TTM2IDM2djEwaC0xMFYzNmgxMHpNNTYgMzZ2MTBoMTBWMzZINTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <p className="text-cyan-400 font-semibold uppercase tracking-widest text-xs mb-4">Make a Difference</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Give the Gift of <span className="text-cyan-400">Opportunity</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
+              <Heart size={16} className="fill-current" />
+              Make a Difference
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 leading-tight mb-6">
+              Give the Gift of <span className="text-blue-600">Opportunity</span>
             </h1>
-            <p className="text-blue-100 text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Every donation directly funds education, farming, and community development programs across Bunyoro, Uganda.
             </p>
           </FadeIn>
@@ -243,6 +246,6 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
