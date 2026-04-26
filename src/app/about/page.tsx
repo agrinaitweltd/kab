@@ -25,17 +25,20 @@ export default function AboutPage() {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 pt-40 pb-24">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)", backgroundSize: "40px 40px" }} />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative bg-white pt-40 pb-24 overflow-hidden">
+        <div className="absolute top-32 left-0 h-32 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-r-full" style={{ width: "40%" }} />
+        <div className="absolute -bottom-32 -right-32 w-[700px] h-[700px] bg-gradient-to-br from-blue-500 to-blue-600 rounded-full opacity-90" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <FadeIn>
-            <p className="text-cyan-400 font-semibold uppercase tracking-widest text-xs mb-4">About the Foundation</p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Rooted in <span className="text-cyan-400">Bunyoro</span>, Built for the World
-            </h1>
-            <p className="text-blue-100 text-xl max-w-2xl mx-auto leading-relaxed">
-              We are a community-driven foundation working to create lasting change through education, agriculture, and empowerment.
-            </p>
+            <div className="mb-6 inline-block relative">
+              <div className="absolute -left-4 top-0 w-20 h-full bg-yellow-400 rounded-r-full -z-10" />
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-blue-700 leading-tight pl-6">
+                Rethink
+              </h1>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight mb-6 max-w-3xl">
+              We disrupt, reimagine and reshape how people and communities contribute to global health across Bunyoro.
+            </h2>
           </FadeIn>
         </div>
       </section>
