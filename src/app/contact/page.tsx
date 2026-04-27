@@ -37,7 +37,7 @@ export default function ContactPage() {
           <p className="text-gray-600 text-lg mb-8">
             Thank you for reaching out, <strong>{formData.name}</strong>. We''ll respond to <strong>{formData.email}</strong> within 24-48 hours.
           </p>
-          <Link href="/" className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-lg">
+          <Link href="/" className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-lg">
             Back to Home
           </Link>
         </FadeIn>
@@ -49,12 +49,12 @@ export default function ContactPage() {
     <main>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute left-0 top-20 w-[600px] h-32 bg-[#00D4FF] rounded-r-full" />
+        <div className="absolute left-0 top-20 w-[600px] h-32 bg-[#1F3A6D] rounded-r-full" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-[#5A6270] leading-tight mb-6">
-              Contact <span className="text-[#FF2E7E]">us</span>
+              Contact <span className="text-[#1F3A6D]">us</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#5A6270] max-w-3xl mx-auto leading-relaxed">
               Whether you want to donate, volunteer, partner with us, or simply learn more—our team is here for you.
@@ -81,7 +81,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-gray-900"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1F3A6D] focus:outline-none text-gray-900"
                         placeholder="John Doe"
                       />
                     </div>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-gray-900"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1F3A6D] focus:outline-none text-gray-900"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                         required
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-gray-900"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1F3A6D] focus:outline-none text-gray-900"
                         placeholder="How can we help?"
                       />
                     </div>
@@ -116,7 +116,7 @@ export default function ContactPage() {
                         rows={6}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none text-gray-900 resize-none"
+                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#1F3A6D] focus:outline-none text-gray-900 resize-none"
                         placeholder="Tell us more about your inquiry..."
                       />
                     </div>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg flex items-center justify-center gap-2"
+                      className="w-full bg-[#1F3A6D] hover:bg-[#162D56] disabled:bg-gray-300 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg flex items-center justify-center gap-2"
                     >
                       {loading ? "Sending..." : (
                         <>
@@ -146,8 +146,8 @@ export default function ContactPage() {
                   
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <MapPin size={20} className="text-blue-600" />
+                      <div className="w-12 h-12 bg-[#1F3A6D]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <MapPin size={20} className="text-[#1F3A6D]" />
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Our Location</p>
@@ -160,8 +160,8 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Phone size={20} className="text-blue-600" />
+                      <div className="w-12 h-12 bg-[#1F3A6D]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Phone size={20} className="text-[#1F3A6D]" />
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Call Us</p>
@@ -171,20 +171,20 @@ export default function ContactPage() {
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <Mail size={20} className="text-blue-600" />
+                      <div className="w-12 h-12 bg-[#1F3A6D]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <Mail size={20} className="text-[#1F3A6D]" />
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Email Us</p>
                         <a
                           href="mailto:info@kabalegafoundation.org"
-                          className="text-blue-600 hover:underline text-sm block"
+                          className="text-[#1F3A6D] hover:underline text-sm block"
                         >
                           info@kabalegafoundation.org
                         </a>
                         <a
                           href="mailto:programs@kabalegafoundation.org"
-                          className="text-blue-600 hover:underline text-sm block mt-1"
+                          className="text-[#1F3A6D] hover:underline text-sm block mt-1"
                         >
                           programs@kabalegafoundation.org
                         </a>
@@ -195,14 +195,14 @@ export default function ContactPage() {
               </FadeIn>
 
               <FadeIn direction="right" delay={100}>
-                <div className="bg-blue-600 rounded-2xl p-6 md:p-8 text-white">
+                <div className="bg-[#1F3A6D] rounded-2xl p-6 md:p-8 text-white">
                   <h3 className="text-xl font-bold mb-3">Want to Visit?</h3>
-                  <p className="text-blue-100 text-sm leading-relaxed mb-4">
+                  <p className="text-white/80 text-sm leading-relaxed mb-4">
                     We welcome site visits from donors, partners, and volunteers. Contact us to schedule a visit to see our programs in action.
                   </p>
                   <Link
                     href="/about"
-                    className="text-white font-semibold text-sm underline hover:text-blue-100"
+                    className="text-white font-semibold text-sm underline hover:text-white/80"
                   >
                     Learn more about our work ?
                   </Link>
@@ -217,7 +217,7 @@ export default function ContactPage() {
       <section className="py-20 md:py-28 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#1F3A6D]/10 text-[#1F3A6D] rounded-full text-sm font-semibold mb-4">
               <HelpCircle size={16} />
               Common Questions
             </div>
@@ -242,7 +242,7 @@ export default function ContactPage() {
               <p className="text-gray-600 mb-4">Still have questions?</p>
               <a
                 href="mailto:info@kabalegafoundation.org"
-                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg"
               >
                 <Mail size={18} />
                 Email Us Directly
