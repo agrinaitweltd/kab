@@ -31,6 +31,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Header typography */
+header h1 {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
 /* Blob shapes */
 .blob-pink {
   background: linear-gradient(135deg, #FF2E7E 0%, #FF5E9D 100%);
