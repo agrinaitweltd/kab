@@ -166,7 +166,7 @@ export default function ContactPage() {
                       <div>
                         <p className="font-semibold text-gray-900 mb-1">Call Us</p>
                         <p className="text-gray-600 text-sm">+256 700 000 000</p>
-                        <p className="text-gray-400 text-xs mt-1">Mon�Fri, 8am�5pm EAT</p>
+                        <p className="text-gray-400 text-xs mt-1">Mon–Fri, 8am–5pm EAT</p>
                       </div>
                     </div>
 

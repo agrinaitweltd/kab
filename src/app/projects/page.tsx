@@ -41,7 +41,7 @@ const projects = [
     icon: Heart,
     title: "Community Development Projects",
     subtitle: "Building infrastructure for tomorrow",
-    description: "Strong communities need more than individual support�they need infrastructure, services, and systems that work for everyone. Our Community Development Projects fund clean water access, healthcare outreach, women''s groups, and village-level infrastructure improvements.",
+    description: "Strong communities need more than individual support—they need infrastructure, services, and systems that work for everyone. Our Community Development Projects fund clean water access, healthcare outreach, women''s groups, and village-level infrastructure improvements.",
     impact: ["45+ villages with active programs", "Clean water access for 5,000+ people", "Monthly healthcare outreach clinics", "Women''s savings and credit groups"],
     img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80",
     stats: [{ label: "Villages", value: "45+" }, { label: "People", value: "5,000+" }, { label: "Groups", value: "22" }],

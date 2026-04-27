@@ -158,11 +158,11 @@ export default function HomePage() {
               </p>
               
               <p className="text-lg text-[#5A6270] leading-relaxed mb-6">
-                As a foundation, we support communities and their development partners by mobilizing new funding from diverse sources – including philanthropists, foundations, businesses, and individuals – to drive innovation and transform the development ecosystem.
+                As a foundation, we support communities and their development partners by mobilizing new funding from diverse sources â€” including philanthropists, foundations, businesses, and individuals â€” to drive innovation and transform the development ecosystem.
               </p>
               
               <p className="text-lg text-[#5A6270] leading-relaxed mb-8">
-                We focus on initiatives that address inequities and the barriers to prosperity – including poverty, lack of education, discrimination, and injustice.
+                We focus on initiatives that address inequities and the barriers to prosperity â€” including poverty, lack of education, discrimination, and injustice.
               </p>
               
               <Link
@@ -425,7 +425,7 @@ export default function HomePage() {
             </h2>
             
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6 max-w-4xl mx-auto">
-              We are here to help communities and their partners to aid critical development projects across Bunyoro – protecting children through education; helping families achieve prosperity; and supporting communities with essential resources.
+              We are here to help communities and their partners to aid critical development projects across Bunyoro â€” protecting children through education; helping families achieve prosperity; and supporting communities with essential resources.
             </p>
             
             <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-12 max-w-4xl mx-auto">

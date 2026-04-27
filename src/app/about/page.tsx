@@ -251,7 +251,7 @@ export default function AboutPage() {
               Join Us in Making a Difference
             </h2>
             <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Whether through donations, volunteering, or partnerships�your support helps us transform lives across Bunyoro.
+              Whether through donations, volunteering, or partnerships—your support helps us transform lives across Bunyoro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
