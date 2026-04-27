@@ -2,14 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { href: "/", label: "HOME" },
   { href: "/about", label: "WHO WE ARE" },
   { href: "/projects", label: "HOW WE WORK" },
   { href: "/donate", label: "WHAT WE DO" },
+  { href: "/contact", label: "CONTACT" },
 ];
 
 export default function Navbar() {
@@ -36,11 +39,22 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="group z-50">
-            <h1 className="text-base md:text-lg font-bold text-gray-900 uppercase tracking-tight leading-tight hover:opacity-70 transition-opacity">
-              KABALEGA SOCIETY<br />
-              <span className="font-normal">FOUNDATIONS</span>
-            </h1>
+          <Link href="/" className="flex items-center gap-3 group z-50">
+            <div className="relative w-10 h-10 md:w-12 md:h-12">
+              <Image
+                src="/logo.png"
+                alt="Kabalega Society Foundation"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="text-sm md:text-base font-bold text-gray-900 uppercase tracking-tight leading-tight group-hover:opacity-70 transition-opacity">
+                KABALEGA SOCIETY<br />
+                <span className="font-normal text-xs md:text-sm">FOUNDATIONS</span>
+              </h1>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
