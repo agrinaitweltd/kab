@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Target, Eye, Users, Calendar } from "lucide-react";
@@ -45,16 +46,22 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn direction="left">
-              <div className="relative">
+              <motion.div 
+                className="relative group"
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              >
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
                     src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&auto=format&fit=crop&q=80"
                     alt="Community in Bunyoro"
                     fill
-                    className="object-cover img-grayscale"
+                    className="object-cover img-grayscale group-hover:scale-110 transition-transform duration-700"
                   />
                 </div>
-              </div>
+                {/* Decorative blob */}
+                <div className="absolute -z-10 -bottom-8 -right-8 w-32 h-32 bg-[#FFB800] rounded-full opacity-20 blur-3xl group-hover:opacity-30 transition-opacity duration-500" />
+              </motion.div>
             </FadeIn>
 
             <FadeIn direction="right">
@@ -64,15 +71,31 @@ export default function AboutPage() {
                   A Legacy of Resilience & Service
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
-                  <p className="text-lg">
-                    Named after King Kabalega�one of Africa''s greatest warrior kings and a symbol of resistance and dignity�the Kabalega Society Foundation was born out of a deep love for the people of Bunyoro.
-                  </p>
-                  <p>
+                  <motion.p 
+                    className="text-lg"
+                    initial={{ opacity: 0.8 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    Named after King Kabalega—one of Africa''s greatest warrior kings and a symbol of resistance and dignity—the Kabalega Society Foundation was born out of a deep love for the people of Bunyoro.
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0.8 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.1 }}
+                  >
                     We started with a simple conviction: that every child deserves to go to school regardless of their family''s economic circumstances. From that seed, we have grown into a comprehensive development organisation addressing poverty, food insecurity, youth unemployment, and community underdevelopment.
-                  </p>
-                  <p>
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0.8 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                  >
                     Today, we operate across <strong>45+ villages</strong>, supporting over <strong>1,200 students</strong> and <strong>300 families</strong> with targeted, dignified, and sustainable programs that respect local culture and amplify community-led solutions.
-                  </p>
+                  </motion.p>
                 </div>
               </div>
             </FadeIn>
@@ -89,27 +112,43 @@ export default function AboutPage() {
           
           <div className="grid md:grid-cols-2 gap-8">
             <FadeIn direction="left">
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 h-full">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-pink-100 rounded-2xl mb-6">
-                  <Target size={28} className="text-[#FF2E7E]" />
-                </div>
+              <motion.div 
+                className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 h-full group"
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
+                <motion.div 
+                  className="inline-flex items-center justify-center w-14 h-14 bg-pink-100 rounded-2xl mb-6 group-hover:bg-[#FF2E7E] transition-colors duration-300"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Target size={28} className="text-[#FF2E7E] group-hover:text-white transition-colors duration-300" />
+                </motion.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#5A6270] mb-4">Our Mission</h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  To empower the people of Bunyoro through sustainable development programs in education, agriculture, and community building�creating pathways out of poverty and into prosperity.
+                  To empower the people of Bunyoro through sustainable development programs in education, agriculture, and community building—creating pathways out of poverty and into prosperity.
                 </p>
-              </div>
+              </motion.div>
             </FadeIn>
 
             <FadeIn direction="right">
-              <div className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 h-full">
-                <div className="inline-flex items-center justify-center w-14 h-14 bg-cyan-100 rounded-2xl mb-6">
-                  <Eye size={28} className="text-[#00D4FF]" />
-                </div>
+              <motion.div 
+                className="bg-white rounded-2xl p-8 md:p-10 shadow-sm border border-gray-200 h-full group"
+                whileHover={{ scale: 1.03, y: -5 }}
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              >
+                <motion.div 
+                  className="inline-flex items-center justify-center w-14 h-14 bg-cyan-100 rounded-2xl mb-6 group-hover:bg-[#00D4FF] transition-colors duration-300"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <Eye size={28} className="text-[#00D4FF] group-hover:text-white transition-colors duration-300" />
+                </motion.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#5A6270] mb-4">Our Vision</h3>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   A Bunyoro region where every child is educated, every family has the dignity of self-sufficiency, and communities thrive through collective action and sustainable development.
                 </p>
-              </div>
+              </motion.div>
             </FadeIn>
           </div>
         </div>
@@ -126,20 +165,35 @@ export default function AboutPage() {
           <div className="space-y-8">
             {timeline.map((item, i) => (
               <FadeIn key={item.year} delay={i * 100}>
-                <div className="flex gap-6 md:gap-8 group">
+                <motion.div 
+                  className="flex gap-6 md:gap-8 group"
+                  whileHover={{ x: 8 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
                   <div className="flex-shrink-0 flex flex-col items-center">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FF2E7E] text-white rounded-2xl flex items-center justify-center font-bold text-lg md:text-xl group-hover:scale-110 transition-transform">
+                    <motion.div 
+                      className="w-16 h-16 md:w-20 md:h-20 bg-[#FF2E7E] text-white rounded-2xl flex items-center justify-center font-bold text-lg md:text-xl shadow-md group-hover:shadow-xl transition-all"
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                    >
                       {item.year}
-                    </div>
+                    </motion.div>
                     {i < timeline.length - 1 && (
-                      <div className="w-0.5 h-full bg-gradient-to-b from-pink-300 to-transparent mt-4" />
+                      <motion.div 
+                        className="w-0.5 h-full bg-gradient-to-b from-pink-300 via-pink-200 to-transparent mt-4"
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
+                        style={{ originY: 0 }}
+                      />
                     )}
                   </div>
-                  <div className="flex-1 pb-8">
+                  <div className="flex-1 pb-8 bg-gray-50 rounded-xl p-6 group-hover:bg-white group-hover:shadow-md transition-all duration-300">
                     <h3 className="text-xl md:text-2xl font-bold text-[#5A6270] mb-2">{item.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{item.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               </FadeIn>
             ))}
           </div>
@@ -160,20 +214,27 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {leadership.map((person, i) => (
               <FadeIn key={person.name} delay={i * 100}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 hover:shadow-lg transition-shadow">
-                  <div className="relative aspect-square">
+                <motion.div 
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 group"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  <div className="relative aspect-square overflow-hidden">
                     <Image
                       src={person.img}
                       alt={person.name}
                       fill
-                      className="object-cover img-grayscale"
+                      className="object-cover img-grayscale group-hover:scale-110 transition-transform duration-700"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#FF2E7E]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <div className="p-6 text-center">
-                    <h3 className="font-bold text-lg text-[#5A6270] mb-1">{person.name}</h3>
+                    <h3 className="font-bold text-lg text-[#5A6270] mb-1 group-hover:text-[#FF2E7E] transition-colors">
+                      {person.name}
+                    </h3>
                     <p className="text-[#FF2E7E] text-sm font-medium">{person.role}</p>
                   </div>
-                </div>
+                </motion.div>
               </FadeIn>
             ))}
           </div>

@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description:
     "The Kabalega Society Foundation works in the Bunyoro region of Uganda to support education, community development, agriculture, and youth empowerment.",
   keywords: "Kabalega, Bunyoro, Uganda, NGO, foundation, education, community development",
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: "Kabalega Society Foundation",
     description: "Empowering Communities Across Bunyoro",
@@ -29,6 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900">
         <Navbar />
         <main className="flex-1">{children}</main>
