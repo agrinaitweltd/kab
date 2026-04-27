@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105">
-            <div className="relative w-[155px] h-[89px]">
+            <div className="relative w-[355px] h-[189px]">
               <Image
                 src="/logo.png"
                 alt="Kabalega Society Foundation"
