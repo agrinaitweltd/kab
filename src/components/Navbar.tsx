@@ -62,15 +62,15 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`relative text-sm font-medium transition-colors duration-200 ${
-                  pathname === link.href ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
+                className={`relative text-sm font-semibold transition-colors duration-200 ${
+                  pathname === link.href ? "text-[#FF2E7E]" : "text-[#5A6270] hover:text-[#FF2E7E]"
                 }`}
               >
                 {link.label}
                 {pathname === link.href && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-600"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FF2E7E]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -78,7 +78,7 @@ export default function Navbar() {
             ))}
             <Link
               href="/donate"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100"
+              className="btn-pink"
             >
               <Heart size={16} className="fill-current" />
               Donate

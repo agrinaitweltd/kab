@@ -44,18 +44,18 @@ export default function Footer() {
             
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="mt-0.5 text-blue-400 flex-shrink-0" />
+                <MapPin size={18} className="mt-0.5 text-[#FF2E7E] flex-shrink-0" />
                 <div className="text-gray-400">
                   <p className="font-medium text-gray-300">Hoima City</p>
                   <p>Bunyoro Region, Western Uganda</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone size={18} className="text-blue-400 flex-shrink-0" />
+                <Phone size={18} className="text-[#FF2E7E] flex-shrink-0" />
                 <span className="text-gray-400">+256 700 000 000</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={18} className="text-blue-400 flex-shrink-0" />
+                <Mail size={18} className="text-[#FF2E7E] flex-shrink-0" />
                 <a href="mailto:info@kabalegafoundation.org" className="text-gray-400 hover:text-white transition-colors">
                   info@kabalegafoundation.org
                 </a>
@@ -94,7 +94,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
+                  className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[#FF2E7E] flex items-center justify-center text-gray-400 hover:text-white transition-all duration-200"
                 >
                   <Icon size={18} />
                 </a>
