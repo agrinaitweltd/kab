@@ -3,10 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #1a1a2e;
-  --color-pink: #FF2E7E;
-  --color-cyan: #00D4FF;
-  --color-yellow: #FFB800;
-  --color-navy: #1E3A8A;
+  --color-pink: #1F3A6D;
+  --color-cyan: #1F3A6D;
+  --color-yellow: #1F3A6D;
+  --color-navy: #1F3A6D;
   --color-gray: #5A6270;
 }
 
@@ -53,7 +53,7 @@ header h1 {
 
 /* Blob shapes */
 .blob-pink {
-  background: linear-gradient(135deg, #FF2E7E 0%, #FF5E9D 100%);
+  background: linear-gradient(135deg, #1F3A6D 0%, #2D4F8A 100%);
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: blob-morph 8s ease-in-out infinite;
   will-change: border-radius;
@@ -61,7 +61,7 @@ header h1 {
 }
 
 .blob-cyan {
-  background: linear-gradient(135deg, #00D4FF 0%, #00A3CC 100%);
+  background: linear-gradient(135deg, #1F3A6D 0%, #2D4F8A 100%);
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   animation: blob-morph 10s ease-in-out infinite;
   will-change: border-radius;
@@ -69,7 +69,7 @@ header h1 {
 }
 
 .blob-yellow {
-  background: linear-gradient(135deg, #FFB800 0%, #FFA500 100%);
+  background: linear-gradient(135deg, #1F3A6D 0%, #2D4F8A 100%);
   border-radius: 40% 60% 60% 40% / 60% 40% 60% 40%;
   animation: blob-morph 12s ease-in-out infinite;
   will-change: border-radius;
@@ -87,7 +87,7 @@ header h1 {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #FF2E7E 0%, #00D4FF 100%);
+  background: linear-gradient(135deg, #1F3A6D 0%, #2D4F8A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -95,7 +95,7 @@ header h1 {
 
 /* Button styles */
 .btn-pink {
-  background: #FF2E7E;
+  background: #1F3A6D;
   color: white;
   font-weight: 700;
   border-radius: 9999px;
@@ -125,9 +125,9 @@ header h1 {
 }
 
 .btn-pink:hover {
-  background: #E0266F;
+  background: #162D56;
   transform: translateY(-2px) scale(1.02) translateZ(0);
-  box-shadow: 0 12px 28px rgba(255, 46, 126, 0.35);
+  box-shadow: 0 12px 28px rgba(31, 58, 109, 0.35);
 }
 
 .btn-pink:hover::before {
@@ -136,7 +136,7 @@ header h1 {
 
 .btn-pink:active {
   transform: translateY(0) scale(0.98) translateZ(0);
-  box-shadow: 0 4px 12px rgba(255, 46, 126, 0.25);
+  box-shadow: 0 4px 12px rgba(31, 58, 109, 0.25);
 }
 
 /* Grayscale images */

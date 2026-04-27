@@ -53,12 +53,12 @@ export default function ProjectsPage() {
     <main>
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-gray-50 to-white pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
-        <div className="absolute left-0 top-20 w-[600px] h-32 bg-[#00D4FF] rounded-r-full" />
+        <div className="absolute left-0 top-20 w-[600px] h-32 bg-[#1F3A6D] rounded-r-full" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-[#5A6270] leading-tight mb-6">
-              How we <span className="text-[#FF2E7E]">work</span>
+              How we <span className="text-[#1F3A6D]">work</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#5A6270] max-w-3xl mx-auto leading-relaxed">
               Four focused initiatives designed to break the cycle of poverty and build stronger, more self-sufficient communities across Bunyoro.
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
                           key={stat.label}
                           className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-100"
                         >
-                          <p className="text-2xl md:text-3xl font-bold text-blue-600">{stat.value}</p>
+                          <p className="text-2xl md:text-3xl font-bold text-[#1F3A6D]">{stat.value}</p>
                           <p className="text-xs text-gray-600 mt-1">{stat.label}</p>
                         </div>
                       ))}
@@ -114,14 +114,14 @@ export default function ProjectsPage() {
                   className={!isEven ? "lg:col-start-1 lg:row-start-1" : ""}
                 >
                   <div className="lg:pt-8">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-100 rounded-2xl mb-6">
-                      <project.icon size={28} className="text-blue-600" />
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-[#1F3A6D]/10 rounded-2xl mb-6">
+                      <project.icon size={28} className="text-[#1F3A6D]" />
                     </div>
                     
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
                       {project.title}
                     </h2>
-                    <p className="text-lg md:text-xl text-blue-600 font-medium mb-6">
+                    <p className="text-lg md:text-xl text-[#1F3A6D] font-medium mb-6">
                       {project.subtitle}
                     </p>
                     <p className="text-gray-700 text-lg leading-relaxed mb-8">
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
                     <div className="space-y-3 mb-8">
                       {project.impact.map((item, i) => (
                         <div key={i} className="flex items-start gap-3">
-                          <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <div className="w-6 h-6 rounded-full bg-[#1F3A6D]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <div className="w-2 h-2 rounded-full bg-blue-600" />
                           </div>
                           <p className="text-gray-600 leading-relaxed">{item}</p>
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
 
                     <Link
                       href="/donate"
-                      className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100"
+                      className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100"
                     >
                       Support This Program
                       <ArrowRight size={18} />
@@ -156,7 +156,7 @@ export default function ProjectsPage() {
       })}
 
       {/* CTA */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-blue-600 to-blue-700 relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-[#1F3A6D] to-[#162D56] relative overflow-hidden">
         <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djEwaC0xMFYxNmgxMHpNMTQgNDZ2MTBoMTBWNDZIMTR6TTM2IDM2djEwaC0xMFYzNmgxMHpNNTYgMzZ2MTBoMTBWMzZINTZ6Ii8+PC9nPjwvZz48L3N2Zz4')` }} />
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -164,20 +164,20 @@ export default function ProjectsPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Ready to Make a Difference?
             </h2>
-            <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
               Your support helps us provide education, skills training, and sustainable livelihoods to families across Bunyoro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/donate"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-blue-600 font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-100"
+                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#1F3A6D] font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-100"
               >
                 Make a Donation
                 <Heart size={18} className="fill-current" />
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-lg border-2 border-white/20 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-4 rounded-lg border-2 border-white/20 transition-all duration-200"
               >
                 Partner With Us
                 <ArrowRight size={18} />

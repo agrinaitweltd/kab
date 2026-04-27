@@ -1,4 +1,4 @@
-ï»¿"use client";
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -13,7 +13,7 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-gray-50 to-white pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
         {/* Decorative blob */}
         <div className="absolute left-0 top-20 w-96 h-96 blob-cyan opacity-70" />
-        <div className="absolute right-0 bottom-0 w-[800px] h-[500px] bg-[#FF2E7E] rounded-tl-[300px]" />
+        <div className="absolute right-0 bottom-0 w-[800px] h-[500px] bg-[#1F3A6D] rounded-tl-[300px]" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -77,13 +77,13 @@ export default function HomePage() {
 
       {/* Hello Section */}
       <section className="relative bg-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#FFB800] rounded-r-full" />
+        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#1F3A6D] rounded-r-full" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Content */}
             <FadeIn direction="left">
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#FF2E7E] leading-[1.1] mb-8">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#1F3A6D] leading-[1.1] mb-8">
                 Hello.
               </h2>
               
@@ -102,7 +102,7 @@ export default function HomePage() {
             {/* Right - Image with blob */}
             <FadeIn direction="right">
               <div className="relative">
-                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#FF2E7E] rounded-tl-[300px] -z-10" />
+                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#1F3A6D] rounded-tl-[300px] -z-10" />
                 <Image
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80"
                   alt="Mother and child"
@@ -124,9 +124,9 @@ export default function HomePage() {
               <div className="flex items-center gap-8 mb-8">
                 <div className="flex-shrink-0">
                   <div className="relative w-24 h-24 md:w-32 md:h-32">
-                    <Plus className="absolute inset-0 w-full h-full text-[#00D4FF]" strokeWidth={4} />
-                    <div className="absolute inset-8 bg-[#FFB800] rounded-full" />
-                    <div className="absolute inset-12 bg-[#FF2E7E]" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
+                    <Plus className="absolute inset-0 w-full h-full text-[#1F3A6D]" strokeWidth={4} />
+                    <div className="absolute inset-8 bg-[#1F3A6D] rounded-full" />
+                    <div className="absolute inset-12 bg-[#1F3A6D]" style={{ clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
                   </div>
                 </div>
                 
@@ -158,11 +158,11 @@ export default function HomePage() {
               </p>
               
               <p className="text-lg text-[#5A6270] leading-relaxed mb-6">
-                As a foundation, we support communities and their development partners by mobilizing new funding from diverse sources â€“ including philanthropists, foundations, businesses, and individuals â€“ to drive innovation and transform the development ecosystem.
+                As a foundation, we support communities and their development partners by mobilizing new funding from diverse sources – including philanthropists, foundations, businesses, and individuals – to drive innovation and transform the development ecosystem.
               </p>
               
               <p className="text-lg text-[#5A6270] leading-relaxed mb-8">
-                We focus on initiatives that address inequities and the barriers to prosperity â€“ including poverty, lack of education, discrimination, and injustice.
+                We focus on initiatives that address inequities and the barriers to prosperity – including poverty, lack of education, discrimination, and injustice.
               </p>
               
               <Link
@@ -204,13 +204,13 @@ export default function HomePage() {
 
       {/* Rethink Section */}
       <section className="relative bg-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#FFB800] rounded-r-full" />
+        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#1F3A6D] rounded-r-full" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Content */}
             <FadeIn direction="left">
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#FF2E7E] leading-[1.1] mb-8">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#1F3A6D] leading-[1.1] mb-8">
                 Rethink
               </h2>
               
@@ -222,7 +222,7 @@ export default function HomePage() {
             {/* Right - Image with blob */}
             <FadeIn direction="right">
               <div className="relative">
-                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#FF2E7E] rounded-tl-[300px] -z-10" />
+                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#1F3A6D] rounded-tl-[300px] -z-10" />
                 <Image
                   src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&auto=format&fit=crop&q=80"
                   alt="Community leader"
@@ -244,7 +244,7 @@ export default function HomePage() {
             <FadeIn>
               <div className="flex items-start gap-6 mb-8">
                 <div className="flex-shrink-0">
-                  <Plus className="w-20 h-20 text-[#00D4FF]" strokeWidth={3} />
+                  <Plus className="w-20 h-20 text-[#1F3A6D]" strokeWidth={3} />
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-[#5A6270] leading-[1.1] mt-2">
                   Our vision
@@ -264,7 +264,7 @@ export default function HomePage() {
             <FadeIn delay={200}>
               <div className="flex items-start gap-6 mb-8">
                 <div className="flex-shrink-0">
-                  <Plus className="w-20 h-20 text-[#FFB800]" strokeWidth={3} />
+                  <Plus className="w-20 h-20 text-[#1F3A6D]" strokeWidth={3} />
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-extrabold text-[#5A6270] leading-[1.1] mt-2">
                   Our mission
@@ -285,13 +285,13 @@ export default function HomePage() {
 
       {/* Unique Section */}
       <section className="relative bg-white py-20 md:py-32 overflow-hidden">
-        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#FFB800] rounded-r-full" />
+        <div className="absolute left-0 top-0 w-[600px] h-32 bg-[#1F3A6D] rounded-r-full" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left - Content */}
             <FadeIn direction="left">
-              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#FF2E7E] leading-[1.1] mb-8">
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#1F3A6D] leading-[1.1] mb-8">
                 Unique
               </h2>
               
@@ -303,7 +303,7 @@ export default function HomePage() {
             {/* Right - Image with blob */}
             <FadeIn direction="right">
               <div className="relative">
-                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#FF2E7E] rounded-tl-[300px] -z-10" />
+                <div className="absolute right-0 bottom-0 w-[600px] h-[400px] bg-[#1F3A6D] rounded-tl-[300px] -z-10" />
                 <Image
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=80"
                   alt="Community volunteer"
@@ -360,7 +360,7 @@ export default function HomePage() {
       <section className="relative bg-white py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#FF2E7E] leading-[1.1] mb-16 text-center lg:text-left">
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#1F3A6D] leading-[1.1] mb-16 text-center lg:text-left">
               We need you...
             </h2>
           </FadeIn>
@@ -375,7 +375,7 @@ export default function HomePage() {
                 <p className="text-lg text-[#5A6270] leading-relaxed mb-6">
                   The Kabalega Society Foundation is here to support your vision of safer, healthier communities.
                 </p>
-                <Link href="/donate" className="text-[#5A6270] font-semibold underline hover:text-[#FF2E7E] transition-colors">
+                <Link href="/donate" className="text-[#5A6270] font-semibold underline hover:text-[#1F3A6D] transition-colors">
                   Read more
                 </Link>
               </div>
@@ -390,7 +390,7 @@ export default function HomePage() {
                 <p className="text-lg text-[#5A6270] leading-relaxed mb-6">
                   The Kabalega Society Foundation connects your business to the programs and people creating positive change.
                 </p>
-                <Link href="/contact" className="text-[#5A6270] font-semibold underline hover:text-[#FF2E7E] transition-colors">
+                <Link href="/contact" className="text-[#5A6270] font-semibold underline hover:text-[#1F3A6D] transition-colors">
                   Read more
                 </Link>
               </div>
@@ -405,7 +405,7 @@ export default function HomePage() {
                 <p className="text-lg text-[#5A6270] leading-relaxed mb-6">
                   Think of us as your ally in creating positive change on a regional scale. With your investment, we can create stronger, more sustainable communities.
                 </p>
-                <Link href="/contact" className="text-[#5A6270] font-semibold underline hover:text-[#FF2E7E] transition-colors">
+                <Link href="/contact" className="text-[#5A6270] font-semibold underline hover:text-[#1F3A6D] transition-colors">
                   Read more
                 </Link>
               </div>
@@ -415,7 +415,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative bg-gradient-to-br from-[#FF2E7E] to-[#E0266F] py-20 md:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#1F3A6D] to-[#162D56] py-20 md:py-32 overflow-hidden">
         <div className="absolute right-0 top-0 w-96 h-96 blob-yellow opacity-30" />
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -425,7 +425,7 @@ export default function HomePage() {
             </h2>
             
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed mb-6 max-w-4xl mx-auto">
-              We are here to help communities and their partners to aid critical development projects across Bunyoro â€“ protecting children through education; helping families achieve prosperity; and supporting communities with essential resources.
+              We are here to help communities and their partners to aid critical development projects across Bunyoro – protecting children through education; helping families achieve prosperity; and supporting communities with essential resources.
             </p>
             
             <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-12 max-w-4xl mx-auto">
@@ -434,7 +434,7 @@ export default function HomePage() {
             
             <Link
               href="/about"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#FF2E7E] font-bold px-10 py-5 rounded-full text-lg transition-all duration-200 hover:shadow-2xl hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#1F3A6D] font-bold px-10 py-5 rounded-full text-lg transition-all duration-200 hover:shadow-2xl hover:scale-105"
             >
               About us
             </Link>
