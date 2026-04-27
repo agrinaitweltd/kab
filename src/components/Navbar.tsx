@@ -39,8 +39,8 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group z-50">
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
+          <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105">
+            <div className="relative w-14 h-14 md:w-16 md:h-16">
               <Image
                 src="/logo.png"
                 alt="Kabalega Society Foundation"
@@ -48,12 +48,6 @@ export default function Navbar() {
                 className="object-contain"
                 priority
               />
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-sm md:text-base font-bold text-gray-900 uppercase tracking-tight leading-tight group-hover:opacity-70 transition-opacity">
-                KABALEGA SOCIETY<br />
-                <span className="font-normal text-xs md:text-sm">FOUNDATIONS</span>
-              </h1>
             </div>
           </Link>
 
@@ -63,7 +57,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-bold uppercase tracking-wide transition-colors duration-200 ${
+                className={`relative text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-out hover:scale-105 ${
                   pathname === link.href ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
                 }`}
               >
@@ -73,50 +67,50 @@ export default function Navbar() {
             
             {/* Search Icon */}
             <button
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Search"
             >
-              <Search size={20} className="text-gray-900" />
+              <Search size={20} className="text-gray-900" strokeWidth={2.5} />
             </button>
             
             {/* Mobile menu button - desktop version */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Toggle menu"
             >
-              <Menu size={24} className="text-gray-900" />
+              <Menu size={24} className="text-gray-900" strokeWidth={2.5} />
             </button>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center gap-2">
             <button
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors"
+              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Search"
             >
-              <Search size={20} className="text-gray-900" />
+              <Search size={20} className="text-gray-900" strokeWidth={2.5} />
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-colors z-50"
+              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95 z-50"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X size={24} className="text-gray-900" /> : <Menu size={24} className="text-gray-900" />}
+              {menuOpen ? <X size={24} className="text-gray-900" strokeWidth={2.5} /> : <Menu size={24} className="text-gray-900" strokeWidth={2.5} />}
             </button>
           </div>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {menuOpen && (
           <>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
               className="fixed inset-0 bg-black/20 backdrop-blur-sm lg:hidden z-40"
               onClick={() => setMenuOpen(false)}
             />
@@ -124,23 +118,38 @@ export default function Navbar() {
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "100%" }}
-              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              transition={{ 
+                type: "spring", 
+                damping: 30, 
+                stiffness: 300,
+                mass: 0.8
+              }}
               className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl lg:hidden z-40 overflow-y-auto"
             >
               <div className="p-8 space-y-4">
                 <div className="space-y-1">
-                  {navLinks.map((link) => (
-                    <Link
+                  {navLinks.map((link, index) => (
+                    <motion.div
                       key={link.href}
-                      href={link.href}
-                      className={`block px-4 py-3 text-lg font-bold uppercase tracking-wide transition-colors ${
-                        pathname === link.href
-                          ? "text-gray-900"
-                          : "text-gray-600 hover:text-gray-900"
-                      }`}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        delay: index * 0.05,
+                        duration: 0.3,
+                        ease: "easeOut"
+                      }}
                     >
-                      {link.label}
-                    </Link>
+                      <Link
+                        href={link.href}
+                        className={`block px-4 py-3 text-lg font-bold uppercase tracking-wide transition-all duration-200 rounded-md hover:bg-gray-50 hover:translate-x-1 ${
+                          pathname === link.href
+                            ? "text-gray-900 bg-gray-50"
+                            : "text-gray-600 hover:text-gray-900"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    </motion.div>
                   ))}
                 </div>
               </div>

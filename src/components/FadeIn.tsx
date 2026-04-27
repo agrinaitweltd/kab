@@ -26,28 +26,33 @@ export default function FadeIn({
           observer.disconnect();
         }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -60px 0px" }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [delay]);
 
   const translateMap = {
-    up: "translate-y-8",
-    down: "-translate-y-8",
-    left: "translate-x-8",
-    right: "-translate-x-8",
+    up: "translate-y-12",
+    down: "-translate-y-12",
+    left: "translate-x-12",
+    right: "-translate-x-12",
     none: "",
   };
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${className} ${
+      className={`transition-all duration-1000 ease-out ${className} ${
         visible
           ? "opacity-100 translate-x-0 translate-y-0"
           : `opacity-0 ${translateMap[direction]}`
       }`}
+      style={{
+        transitionTimingFunction: visible 
+          ? 'cubic-bezier(0.16, 1, 0.3, 1)' 
+          : 'cubic-bezier(0.4, 0, 0.2, 1)'
+      }}
     >
       {children}
     </div>
