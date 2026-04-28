@@ -76,7 +76,6 @@ export default function PrivacyPage() {
                       <li><strong>Preference Cookies:</strong> Remember your choices and settings</li>
                       <li><strong>Marketing Cookies:</strong> Track your interests for personalized content</li>
                     </ul>
-                  </p>
                   </div>
 
                   <div>

@@ -201,7 +201,9 @@ header h1 {
   }
 
   /* Improve tap highlighting on mobile */
-  -webkit-tap-highlight-color: rgba(31, 58, 109, 0.1);
+  * {
+    -webkit-tap-highlight-color: rgba(31, 58, 109, 0.1);
+  }
 }
 
 /* Landscape mobile improvements */
