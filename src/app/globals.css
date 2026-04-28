@@ -21,7 +21,13 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -147,4 +153,94 @@ header h1 {
 
 .img-grayscale:hover {
   filter: grayscale(0%);
+}
+
+/* Mobile-First Responsive Improvements */
+@media (max-width: 640px) {
+  /* Larger touch targets on mobile */
+  button, a[class*="btn"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better spacing on mobile */
+  main {
+    overflow-x: hidden;
+  }
+
+  /* Reduce blob size on mobile */
+  .blob-cyan, .blob-pink, .blob-yellow {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  /* Better container padding on mobile */
+  [class*="max-w-7xl"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+
+  /* Better readability for small screens */
+  h1 {
+    line-height: 1.15;
+  }
+
+  h2 {
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Improve tap highlighting on mobile */
+  -webkit-tap-highlight-color: rgba(31, 58, 109, 0.1);
+}
+
+/* Landscape mobile improvements */
+@media (max-height: 600px) and (orientation: landscape) {
+  header {
+    height: 3.5rem;
+  }
+
+  main {
+    padding-top: 3.5rem;
+  }
+}
+
+/* Prevent horizontal scroll on all small devices */
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  [class*="max-w"] {
+    width: 100%;
+  }
+}
+
+/* Better accessibility on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase button padding on touch devices */
+  .btn-pink {
+    padding: 1.25rem 2rem;
+  }
+
+  /* Remove hover effects on touch devices, keep active */
+  button:hover,
+  a:hover {
+    transform: none;
+  }
+
+  button:active,
+  a:active {
+    transform: scale(0.98) translateZ(0);
+  }
 }

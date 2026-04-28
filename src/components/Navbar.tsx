@@ -36,11 +36,11 @@ export default function Navbar() {
         scrolled ? "shadow-sm" : ""
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105">
-            <div className="relative w-[300px] h-[129px]">
+          <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105 flex-shrink-0">
+            <div className="relative w-[120px] h-[50px] sm:w-[200px] sm:h-[85px] md:w-[250px] md:h-[107px] lg:w-[300px] lg:h-[129px]">
               <Image
                 src="/logo.png"
                 alt="Kabalega Society Foundation"
