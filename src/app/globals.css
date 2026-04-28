@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a2e;
-  --color-pink: #1F3A6D;
-  --color-cyan: #1F3A6D;
-  --color-yellow: #1F3A6D;
-  --color-navy: #1F3A6D;
-  --color-gray: #5A6270;
+  --background: #dde5e9;
+  --foreground: #353d52;
+  --who-bg: #dde5e9;
+  --who-text: #3d455b;
+  --who-head: #394157;
+  --who-pink: #f32da7;
+  --who-cyan: #27c3e4;
+  --who-yellow: #f3c954;
+  --who-green: #48c52f;
+  --who-blue: #2a36a9;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --color-primary: var(--color-pink);
-  --color-secondary: var(--color-cyan);
-  --color-accent: var(--color-yellow);
+  --font-sans: var(--font-manrope);
+  --color-primary: var(--who-pink);
+  --color-secondary: var(--who-cyan);
+  --color-accent: var(--who-yellow);
 }
 
 html {
@@ -48,6 +51,10 @@ body {
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  background: var(--who-bg);
 }
 
 /* Header typography */
@@ -101,11 +108,14 @@ header h1 {
 
 /* Button styles */
 .btn-pink {
-  background: #1F3A6D;
+  background: var(--who-pink);
   color: white;
   font-weight: 700;
   border-radius: 9999px;
-  padding: 1rem 2.5rem;
+  padding: 0.8rem 2.1rem;
+  font-size: 1.95rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
@@ -131,9 +141,9 @@ header h1 {
 }
 
 .btn-pink:hover {
-  background: #162D56;
+  background: #df1991;
   transform: translateY(-2px) scale(1.02) translateZ(0);
-  box-shadow: 0 12px 28px rgba(31, 58, 109, 0.35);
+  box-shadow: 0 12px 28px rgba(243, 45, 167, 0.34);
 }
 
 .btn-pink:hover::before {
@@ -142,7 +152,7 @@ header h1 {
 
 .btn-pink:active {
   transform: translateY(0) scale(0.98) translateZ(0);
-  box-shadow: 0 4px 12px rgba(31, 58, 109, 0.25);
+  box-shadow: 0 4px 12px rgba(243, 45, 167, 0.25);
 }
 
 /* Grayscale images */
@@ -153,6 +163,142 @@ header h1 {
 
 .img-grayscale:hover {
   filter: grayscale(0%);
+}
+
+.who-title {
+  color: var(--who-head);
+  font-size: clamp(3.25rem, 11vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.who-lead {
+  color: var(--who-head);
+  font-size: clamp(3rem, 10vw, 5.2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
+}
+
+.who-copy {
+  color: var(--who-text);
+  font-size: clamp(1.95rem, 5.4vw, 2.55rem);
+  line-height: 1.34;
+  letter-spacing: -0.01em;
+}
+
+.who-subtitle {
+  color: var(--who-head);
+  font-size: clamp(2.45rem, 7.2vw, 3.8rem);
+  line-height: 1.16;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.who-link {
+  display: inline-flex;
+  margin-top: 0.9rem;
+  color: var(--who-pink);
+  font-size: clamp(1.9rem, 5vw, 2.2rem);
+  font-weight: 700;
+}
+
+.who-link::after {
+  content: " \2192";
+  margin-left: 0.5rem;
+}
+
+.who-read-more {
+  display: inline-block;
+  color: var(--who-text);
+  font-size: clamp(1.9rem, 5vw, 2.1rem);
+  font-weight: 500;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.15rem;
+}
+
+.who-band {
+  position: relative;
+  height: 6.9rem;
+  border-radius: 0 3.4rem 3.4rem 0;
+  width: min(95%, 700px);
+}
+
+.who-band span {
+  position: absolute;
+  right: 1.2rem;
+  top: -1.2rem;
+  font-size: clamp(5rem, 15vw, 7.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.who-band-hello {
+  background: var(--who-yellow);
+}
+
+.who-band-hello span {
+  color: var(--who-pink);
+}
+
+.who-band-rethink {
+  background: var(--who-yellow);
+}
+
+.who-band-rethink span {
+  color: var(--who-pink);
+}
+
+.who-plus {
+  position: relative;
+  width: 17rem;
+  height: 17rem;
+  margin-left: 2.2rem;
+}
+
+.who-plus::before,
+.who-plus::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+}
+
+.who-plus::before {
+  width: 100%;
+  height: 4rem;
+  top: 6.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--who-yellow) 0% 42%,
+    var(--who-blue) 42% 58%,
+    var(--who-pink) 58% 82%,
+    var(--who-green) 82% 100%
+  );
+}
+
+.who-plus::after {
+  width: 4rem;
+  height: 100%;
+  left: 6.5rem;
+  background: var(--who-cyan);
+}
+
+.who-question {
+  color: var(--who-blue);
+  text-shadow: -6px 0 var(--who-pink), 6px 0 var(--who-cyan);
+  font-size: clamp(13rem, 38vw, 20rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.who-quote {
+  font-size: clamp(3.15rem, 9.6vw, 5.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  color: var(--who-head);
 }
 
 /* Mobile-First Responsive Improvements */
@@ -204,6 +350,36 @@ header h1 {
   * {
     -webkit-tap-highlight-color: rgba(31, 58, 109, 0.1);
   }
+
+  .btn-pink {
+    font-size: 1.8rem;
+    padding: 0.75rem 1.95rem;
+  }
+
+  .who-band {
+    height: 6.1rem;
+  }
+
+  .who-band span {
+    top: -0.8rem;
+    right: 1rem;
+  }
+
+  .who-plus {
+    width: 14.8rem;
+    height: 14.8rem;
+    margin-left: 0.8rem;
+  }
+
+  .who-plus::before {
+    top: 5.4rem;
+    height: 3.6rem;
+  }
+
+  .who-plus::after {
+    left: 5.6rem;
+    width: 3.6rem;
+  }
 }
 
 /* Landscape mobile improvements */
@@ -232,7 +408,7 @@ header h1 {
 @media (hover: none) and (pointer: coarse) {
   /* Increase button padding on touch devices */
   .btn-pink {
-    padding: 1.25rem 2rem;
+    padding: 0.85rem 2rem;
   }
 
   /* Remove hover effects on touch devices, keep active */

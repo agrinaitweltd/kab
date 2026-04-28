@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Search } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -26,21 +26,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
-
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
-        scrolled ? "shadow-sm" : ""
+      className={`fixed top-0 left-0 right-0 z-50 bg-[#e4eaee] transition-all duration-300 ${
+        scrolled ? "shadow-[0_6px_20px_rgba(50,60,80,0.08)]" : ""
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-[96px] sm:h-[104px]">
           {/* Logo */}
           <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105 flex-shrink-0">
-            <div className="relative w-[120px] h-[50px] sm:w-[200px] sm:h-[85px] md:w-[250px] md:h-[107px] lg:w-[300px] lg:h-[129px]">
+            <div className="relative w-[175px] h-[72px] sm:w-[210px] sm:h-[86px] md:w-[230px] md:h-[94px] lg:w-[260px] lg:h-[106px]">
               <Image
                 src="/logo.png"
                 alt="Kabalega Society Foundation"
@@ -52,55 +48,43 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={() => setMenuOpen(false)}
                 className={`relative text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-out hover:scale-105 ${
-                  pathname === link.href ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
+                  pathname === link.href ? "text-[#2e354b]" : "text-[#4a5266] hover:text-[#2e354b]"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
-            
-            {/* Search Icon */}
-            <button
-              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
-              aria-label="Search"
-            >
-              <Search size={20} className="text-gray-900" strokeWidth={2.5} />
-            </button>
-            
+
             {/* Mobile menu button - desktop version */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
+              className="p-2 hover:bg-white/60 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Toggle menu"
             >
-              <Menu size={24} className="text-gray-900" strokeWidth={2.5} />
+              {menuOpen ? <X size={30} className="text-[#4a5266]" strokeWidth={2.4} /> : <Menu size={30} className="text-[#4a5266]" strokeWidth={2.4} />}
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center gap-2">
-            <button
-              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
-              aria-label="Search"
-            >
-              <Search size={20} className="text-gray-900" strokeWidth={2.5} />
-            </button>
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-gray-100 rounded-md transition-all duration-200 hover:scale-110 active:scale-95 z-50"
+              className="p-2 hover:bg-white/60 rounded-md transition-all duration-200 hover:scale-110 active:scale-95 z-50"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X size={24} className="text-gray-900" strokeWidth={2.5} /> : <Menu size={24} className="text-gray-900" strokeWidth={2.5} />}
+              {menuOpen ? <X size={38} className="text-[#4a5266]" strokeWidth={2.2} /> : <Menu size={38} className="text-[#4a5266]" strokeWidth={2.2} />}
             </button>
           </div>
         </div>
       </nav>
+      <div className="h-[2px] bg-[#33c6de]/80" />
 
       {/* Mobile Menu */}
       <AnimatePresence mode="wait">
@@ -124,7 +108,7 @@ export default function Navbar() {
                 stiffness: 300,
                 mass: 0.8
               }}
-              className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-white shadow-2xl lg:hidden z-40 overflow-y-auto"
+              className="fixed top-[98px] right-0 bottom-0 w-full max-w-sm bg-[#e4eaee] shadow-2xl lg:hidden z-40 overflow-y-auto"
             >
               <div className="p-8 space-y-4">
                 <div className="space-y-1">
@@ -141,10 +125,11 @@ export default function Navbar() {
                     >
                       <Link
                         href={link.href}
-                        className={`block px-4 py-3 text-lg font-bold uppercase tracking-wide transition-all duration-200 rounded-md hover:bg-gray-50 hover:translate-x-1 ${
+                        onClick={() => setMenuOpen(false)}
+                        className={`block px-4 py-3 text-lg font-bold uppercase tracking-wide transition-all duration-200 rounded-md hover:bg-white/55 hover:translate-x-1 ${
                           pathname === link.href
-                            ? "text-gray-900 bg-gray-50"
-                            : "text-gray-600 hover:text-gray-900"
+                            ? "text-[#2f364a] bg-white/50"
+                            : "text-[#4a5266] hover:text-[#2f364a]"
                         }`}
                       >
                         {link.label}
