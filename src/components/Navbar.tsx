@@ -15,6 +15,25 @@ const navLinks = [
   { href: "/contact", label: "CONTACT" },
 ];
 
+const linkVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
+  hover: {
+    x: 8,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,21 +41,33 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const throttledHandleScroll = () => {
+      handleScroll();
+    };
+    window.addEventListener("scroll", throttledHandleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", throttledHandleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-[#e4eaee] transition-all duration-300 ${
-        scrolled ? "shadow-[0_6px_20px_rgba(50,60,80,0.08)]" : ""
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-[#e4eaee]/95 backdrop-blur-md shadow-lg" 
+          : "bg-[#e4eaee]"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[96px] sm:h-[104px]">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           {/* Logo */}
-          <Link href="/" className="group z-50 transition-transform duration-300 hover:scale-105 flex-shrink-0">
-            <div className="relative w-[175px] h-[72px] sm:w-[210px] sm:h-[86px] md:w-[230px] md:h-[94px] lg:w-[260px] lg:h-[106px]">
+          <Link 
+            href="/" 
+            className="group z-50 transition-transform duration-300 hover:scale-105 active:scale-95 flex-shrink-0"
+          >
+            <motion.div 
+              className="relative w-32 h-12 sm:w-40 sm:h-16 md:w-48 md:h-20 lg:w-56 lg:h-24"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Image
                 src="/logo.png"
                 alt="Kabalega Society Foundation"
@@ -44,47 +75,71 @@ export default function Navbar() {
                 className="object-contain"
                 priority
               />
-            </div>
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
+          <div className="hidden lg:flex items-center gap-2 xl:gap-8">
+            {navLinks.map((link, index) => (
+              <motion.div
                 key={link.href}
-                href={link.href}
-                onClick={() => setMenuOpen(false)}
-                className={`relative text-sm font-bold uppercase tracking-wide transition-all duration-300 ease-out hover:scale-105 ${
-                  pathname === link.href ? "text-[#2e354b]" : "text-[#4a5266] hover:text-[#2e354b]"
-                }`}
+                variants={linkVariants}
+                initial="hidden"
+                animate="visible"
+                custom={index}
               >
-                {link.label}
-              </Link>
+                <Link
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={`relative text-xs xl:text-sm font-bold uppercase tracking-wider px-3 py-2 rounded-md transition-all duration-300 ${
+                    pathname === link.href 
+                      ? "text-[#2e354b] bg-white/40" 
+                      : "text-[#4a5266] hover:text-[#2e354b] hover:bg-white/30"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
-
-            {/* Mobile menu button - desktop version */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-white/60 rounded-md transition-all duration-200 hover:scale-110 active:scale-95"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X size={30} className="text-[#4a5266]" strokeWidth={2.4} /> : <Menu size={30} className="text-[#4a5266]" strokeWidth={2.4} />}
-            </button>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center">
-            <button
+            <motion.button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 hover:bg-white/60 rounded-md transition-all duration-200 hover:scale-110 active:scale-95 z-50"
+              className="p-2 hover:bg-white/60 rounded-md transition-all duration-200 active:scale-90 z-50"
               aria-label="Toggle menu"
+              whileTap={{ scale: 0.9 }}
             >
-              {menuOpen ? <X size={38} className="text-[#4a5266]" strokeWidth={2.2} /> : <Menu size={38} className="text-[#4a5266]" strokeWidth={2.2} />}
-            </button>
+              {menuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 90 }}
+                  exit={{ rotate: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X size={28} className="text-[#4a5266]" strokeWidth={2.5} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90 }}
+                  animate={{ rotate: 0 }}
+                  exit={{ rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu size={28} className="text-[#4a5266]" strokeWidth={2.5} />
+                </motion.div>
+              )}
+            </motion.button>
           </div>
         </div>
       </nav>
-      <div className="h-[2px] bg-[#33c6de]/80" />
+      <motion.div 
+        className="h-0.5 bg-gradient-to-r from-[#33c6de] via-[#33c6de] to-transparent"
+        layoutId="divider"
+      />
 
       {/* Mobile Menu */}
       <AnimatePresence mode="wait">
@@ -94,49 +149,45 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              className="fixed inset-0 bg-black/20 backdrop-blur-sm lg:hidden z-40"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="fixed inset-0 bg-black/10 backdrop-blur-sm lg:hidden z-40"
               onClick={() => setMenuOpen(false)}
             />
             <motion.div
-              initial={{ opacity: 0, x: "100%" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "100%" }}
+              initial={{ opacity: 0, y: -10, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: "auto" }}
+              exit={{ opacity: 0, y: -10, height: 0 }}
               transition={{ 
                 type: "spring", 
-                damping: 30, 
-                stiffness: 300,
-                mass: 0.8
+                damping: 25,
+                stiffness: 400,
+                mass: 0.5,
               }}
-              className="fixed top-[98px] right-0 bottom-0 w-full max-w-sm bg-[#e4eaee] shadow-2xl lg:hidden z-40 overflow-y-auto"
+              className="absolute top-full left-0 right-0 bg-[#e4eaee]/98 backdrop-blur-md shadow-lg lg:hidden z-40 overflow-hidden border-b border-white/20"
             >
-              <div className="p-8 space-y-4">
-                <div className="space-y-1">
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ 
-                        delay: index * 0.05,
-                        duration: 0.3,
-                        ease: "easeOut"
-                      }}
+              <div className="p-4 sm:p-6 space-y-2">
+                {navLinks.map((link, index) => (
+                  <motion.div
+                    key={link.href}
+                    custom={index}
+                    variants={linkVariants}
+                    initial="hidden"
+                    animate="visible"
+                    whileHover="hover"
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`block px-4 py-3 sm:py-4 text-base sm:text-lg font-bold uppercase tracking-wide transition-all duration-200 rounded-lg hover:bg-white/50 ${
+                        pathname === link.href
+                          ? "text-[#2f364a] bg-white/60"
+                          : "text-[#4a5266] hover:text-[#2f364a]"
+                      }`}
                     >
-                      <Link
-                        href={link.href}
-                        onClick={() => setMenuOpen(false)}
-                        className={`block px-4 py-3 text-lg font-bold uppercase tracking-wide transition-all duration-200 rounded-md hover:bg-white/55 hover:translate-x-1 ${
-                          pathname === link.href
-                            ? "text-[#2f364a] bg-white/50"
-                            : "text-[#4a5266] hover:text-[#2f364a]"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </>

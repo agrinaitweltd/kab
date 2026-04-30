@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface FadeInProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
   direction?: "up" | "down" | "left" | "right" | "none";
+  duration?: number;
+  stagger?: boolean;
 }
 
 export default function FadeIn({
@@ -14,47 +17,62 @@ export default function FadeIn({
   className = "",
   delay = 0,
   direction = "up",
+  duration = 0.6,
+  stagger = false,
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), delay);
+          setTimeout(() => setIsVisible(true), delay);
           observer.disconnect();
         }
       },
-      { threshold: 0.05, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -80px 0px" }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [delay]);
 
-  const translateMap = {
-    up: "translate-y-12",
-    down: "-translate-y-12",
-    left: "translate-x-12",
-    right: "-translate-x-12",
-    none: "",
+  const getInitialPosition = () => {
+    const distances = {
+      up: { y: 40, x: 0 },
+      down: { y: -40, x: 0 },
+      left: { x: 40, y: 0 },
+      right: { x: -40, y: 0 },
+      none: { x: 0, y: 0 },
+    };
+    return distances[direction];
+  };
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      ...getInitialPosition(),
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration,
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${className} ${
-        visible
-          ? "opacity-100 translate-x-0 translate-y-0"
-          : `opacity-0 ${translateMap[direction]}`
-      }`}
-      style={{
-        transitionTimingFunction: visible 
-          ? 'cubic-bezier(0.16, 1, 0.3, 1)' 
-          : 'cubic-bezier(0.4, 0, 0.2, 1)'
-      }}
+      className={className}
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={variants}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
