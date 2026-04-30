@@ -1,601 +1,173 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
-
-const leadership = [
-  {
-    name: "Anil Soni",
-    role: "Chief Executive Officer",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Valerie Boulet",
-    role: "Chief Development Officer",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Parul Pandey",
-    role: "Chief Strategy Officer",
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Susan Quist",
-    role: "Head of Partnerships",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=80",
-  },
-];
-
-const board = [
-  {
-    name: "Prof. Dr. Thomas Zeltner",
-    role: "Founder and Chair of the Board",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Bob Carter",
-    role: "Board member",
-    image: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Clare Akamanzi",
-    role: "Board member",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Dr. Silvia Gold",
-    role: "Board member",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=800&auto=format&fit=crop&q=80",
-  },
-];
 
 const needs = [
   {
     title: "Philanthropists",
-    text: "The Kabalega Society Foundation is here to support your vision of a safer, healthier world.",
+    text: "The WHO Foundation is here to support your vision of a safer, healthier world.",
     href: "/donate",
   },
   {
     title: "Corporate partners",
-    text: "The Kabalega Society Foundation connects your business to the programs and people solving urgent regional challenges.",
+    text: "The WHO Foundation connects your business to the programmes and people solving the world's health challenges.",
     href: "/contact",
   },
   {
     title: "Impact investors",
-    text: "Think of us as your ally in creating positive change at scale through resilient, long-term systems.",
+    text: "Think of us as your ally in creating positive change on a global scale. With your investment, we can create stronger, more sustainable health systems.",
     href: "/projects",
   },
 ];
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const,
-    },
-  },
-};
-
 export default function HomePage() {
   return (
-    <main className="bg-[var(--who-bg)] text-[var(--who-text)] overflow-x-clip">
-      <motion.section 
-        className="pt-36 pb-16 px-5 sm:px-8 max-w-6xl mx-auto"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <motion.div variants={itemVariants} className="who-band who-band-hello mb-10">
-          <span>Hello.</span>
-        </motion.div>
-        <motion.h1 variants={itemVariants} className="who-lead mb-6">
-          We bring together funders and high impact health initiatives to further the mission of the World Health Organization (WHO).
-        </motion.h1>
-        <motion.div variants={itemVariants}>
-          <Link href="/about" className="btn-pink mb-12">
-            About us
-          </Link>
-        </motion.div>
-        <motion.div 
-          variants={itemVariants}
-          className="relative pt-10"
-        >
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="absolute inset-x-0 bottom-0 h-44 rounded-[56px] bg-[var(--who-pink)]" 
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.7, ease: "easeOut" as const }}
-            whileHover={{ scale: 1.02 }}
-            className="relative z-10 w-full max-w-[580px]"
-          >
-            <Image
-              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1000&auto=format&fit=crop&q=80"
-              alt="Mother holding child"
-              width={900}
-              height={650}
-              className="img-grayscale"
-              priority
-            />
-          </motion.div>
-        </motion.div>
-      </motion.section>
-
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
-            <div>
-              <h2 className="who-title mb-6">How do we achieve this?</h2>
-              <p className="who-copy mb-5">
-                We are here to help the World Health Organization and its partners aid critical health projects across the Bunyoro: protecting children from disease, helping women give birth safely, and supporting hospitals with essential medicines.
-              </p>
-              <p className="who-copy mb-8">
-                But that's not all we do. We bring together the people trying to solve the world's most urgent health challenges with those who can fund their work. This funding paves the way for innovations in health technology and more sustainable health systems, helping to make the world a better place, in more places.
-              </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link href="/about" className="btn-pink">
-                  About us
-                </Link>
-              </motion.div>
+    <main className="overflow-x-hidden bg-[#e9f0f3] text-[#4b5563]">
+      <section className="mx-auto max-w-[1240px] px-6 pb-20 pt-28 sm:px-10 lg:px-16 lg:pb-28 lg:pt-36">
+        <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-6">
+          <FadeIn direction="down" className="relative z-10 max-w-[360px] lg:ml-16">
+            <div className="relative mb-8 h-[28px] w-[268px] rounded-r-full bg-[#f7c85c] sm:h-[34px] sm:w-[330px]">
+              <h1 className="absolute -right-4 -top-7 text-[3.9rem] font-extrabold leading-none tracking-[-0.06em] text-[#ff2da0] sm:text-[5.4rem]">
+                Hello.
+              </h1>
             </div>
-            <motion.div 
-              className="hidden lg:block relative w-48 h-48 flex-shrink-0"
-              initial={{ opacity: 0, rotate: -10, scale: 0.8 }}
-              whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
-              whileHover={{ rotate: 5, scale: 1.1 }}
-            >
-              <svg viewBox="0 0 200 200" className="w-full h-full">
-                {/* Question mark shape */}
-                <defs>
-                  <linearGradient id="questionGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: 'var(--who-cyan)', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: 'var(--who-blue)', stopOpacity: 1 }} />
-                  </linearGradient>
-                  <linearGradient id="questionGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style={{ stopColor: 'var(--who-pink)', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: 'var(--who-blue)', stopOpacity: 1 }} />
-                  </linearGradient>
-                </defs>
-                {/* Top curve of question mark */}
-                <path d="M 60 50 Q 60 20, 90 20 Q 120 20, 120 50 Q 120 70, 100 85 L 100 110" 
-                      fill="none" 
-                      stroke="url(#questionGrad1)" 
-                      strokeWidth="24" 
-                      strokeLinecap="round"/>
-                {/* Dot of question mark */}
-                <circle cx="100" cy="145" r="15" fill="url(#questionGrad2)"/>
-              </svg>
-            </motion.div>
-          </div>
-        </section>
-      </FadeIn>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <div className="relative pt-5 mb-8">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="h-28 w-full rounded-full bg-[var(--who-cyan)]" 
-            />
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className="absolute right-0 -bottom-10 w-[48%] max-w-[280px]"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=1000&auto=format&fit=crop&q=80"
-                alt="Emergency response worker"
-                width={420}
-                height={500}
-                className="img-grayscale"
-              />
-            </motion.div>
-          </div>
-          <h2 className="who-title mb-5">Health Emergencies Alliance</h2>
-          <p className="who-copy mb-5">
-            Every humanitarian crisis is also a health crisis. We support frontline teams to prevent, prepare for, and respond to health emergencies wherever they happen.
-          </p>
-          <p className="who-copy mb-8">
-            Timely investment coupled with expert preparations can help provide quality healthcare for people in crisis and save many lives.
-          </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/projects" className="btn-pink">
-              Find out more
-            </Link>
-          </motion.div>
-        </section>
-      </FadeIn>
+            <p className="max-w-[280px] text-[1.95rem] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#4a5562] sm:max-w-[330px] sm:text-[2.65rem]">
+              We bring together funders and high impact health initiatives to further the mission of the World Health Organization (WHO).
+            </p>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring" }}
-            className="who-plus mb-8" 
-          />
-          <h2 className="who-title mb-5">We raise funds to improve people&apos;s health worldwide</h2>
-          <p className="who-copy mb-4">
-            Millions of people have little or no chance of good health, simply because of where they were born, live, or work.
-          </p>
-          <p className="who-copy">
-            We are working hard to improve that reality by connecting donors with initiatives that make a real difference to people&apos;s lives.
-          </p>
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <p className="who-copy mb-5">
-            We connect donors to doers in order to fund big bets, those initiatives with the greatest potential to improve global health.
-          </p>
-          <p className="who-copy mb-5">
-            We support the WHO and its global network of partners by mobilizing new funding from philanthropists, foundations, businesses, and individuals.
-          </p>
-          <p className="who-copy mb-8">
-            We focus on initiatives that address health inequities and barriers to wellbeing, including poverty, conflict, discrimination, and injustice.
-          </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/projects" className="btn-pink mb-10">
-              Areas of focus
-            </Link>
-          </motion.div>
-          <motion.div 
-            className="grid grid-cols-2 gap-3"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotate: -2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1612277795421-9bc7706a4a41?w=800&auto=format&fit=crop&q=80"
-                alt="Vaccinator"
-                width={360}
-                height={320}
-                className="w-full img-grayscale"
-              />
-            </motion.div>
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="mt-10"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&auto=format&fit=crop&q=80"
-                alt="Healthcare delivery"
-                width={360}
-                height={320}
-                className="w-full img-grayscale"
-              />
-            </motion.div>
-          </motion.div>
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <h2 className="who-title mb-8">Our Leadership Team</h2>
-          <motion.div 
-            className="grid grid-cols-2 gap-x-4 gap-y-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={containerVariants}
-          >
-            {leadership.map((member) => (
-              <motion.article 
-                key={member.name}
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300 }}
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }} className="mt-6">
+              <Link
+                href="/about"
+                className="inline-flex rounded-full bg-[#ff2da0] px-4 py-2 text-[0.78rem] font-extrabold tracking-[-0.02em] text-white shadow-[0_10px_24px_rgba(255,45,160,0.24)] transition-colors hover:bg-[#ec1991]"
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={380}
-                    height={380}
-                    className="w-full aspect-square object-cover img-grayscale"
-                  />
-                </motion.div>
-                <h3 className="mt-3 text-[2rem] leading-[1.05] tracking-[-0.02em] font-extrabold">{member.name}</h3>
-                <p className="text-[1.9rem] leading-[1.08] mt-2">{member.role}</p>
-                <Link href="/about" className="who-link">
-                  LinkedIn profile
-                </Link>
-              </motion.article>
-            ))}
-          </motion.div>
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="who-band who-band-rethink mb-8"
-          >
-            <span>Rethink</span>
-          </motion.div>
-          <h2 className="who-title mb-5">We disrupt, reimagine and reshape how people and companies contribute to global health.</h2>
-          <motion.div 
-            className="relative mt-10 pt-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div 
-              variants={itemVariants}
-              className="absolute inset-x-0 bottom-0 h-52 rounded-[56px] bg-[var(--who-pink)]" 
-            />
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.03, rotate: 1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full max-w-[560px] img-grayscale mx-auto"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1000&auto=format&fit=crop&q=80"
-                alt="Public health leader"
-                width={900}
-                height={700}
-                className="w-full"
-              />
+                About us
+              </Link>
             </motion.div>
-          </motion.div>
-        </section>
-      </FadeIn>
+          </FadeIn>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <h2 className="who-title mb-8">Our Board</h2>
-          <motion.div 
-            className="grid grid-cols-2 gap-x-4 gap-y-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={containerVariants}
-          >
-            {board.map((member) => (
-              <motion.article 
-                key={member.name}
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300 }}
+          <FadeIn direction="left" className="relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[760px]">
+              <div className="absolute bottom-2 left-[11%] right-[5%] h-[90px] rounded-full bg-[#ff2da0] sm:h-[112px] lg:h-[124px]" />
+              <div className="relative mx-auto aspect-[1.25/1] w-full max-w-[500px] lg:mr-12 lg:max-w-[540px]">
+                <Image
+                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1200&auto=format&fit=crop&q=80"
+                  alt="Mother holding child"
+                  fill
+                  priority
+                  className="object-contain grayscale"
+                />
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1240px] px-6 pb-20 sm:px-10 lg:px-16 lg:pb-28">
+        <div className="grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+          <FadeIn direction="up" className="lg:ml-[180px] lg:max-w-[440px]">
+            <h2 className="max-w-[360px] text-[3.25rem] font-extrabold leading-[0.95] tracking-[-0.06em] text-[#4a5562] sm:text-[4.8rem]">
+              How do we achieve this?
+            </h2>
+            <div className="mt-5 max-w-[330px] space-y-4 text-[1rem] leading-[1.7] text-[#5d6773] sm:text-[1.06rem]">
+              <p>
+                We are here to help the World Health Organization and its partners to aid critical health projects across the world, protecting children from disease, helping women to give birth safely in emergencies, and supplying hospitals with essential medicines.
+              </p>
+              <p>
+                But that&apos;s not all we do. We bring together the people trying to solve the world&apos;s most urgent health challenges with those who are able to fund their work. This funding paves the way for innovations in health technology and more sustainable health systems. All with the single goal of saving more lives, in more places.
+              </p>
+            </div>
+
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }} className="mt-6">
+              <Link
+                href="/about"
+                className="inline-flex rounded-full bg-[#ff2da0] px-4 py-2 text-[0.78rem] font-extrabold tracking-[-0.02em] text-white shadow-[0_10px_24px_rgba(255,45,160,0.24)] transition-colors hover:bg-[#ec1991]"
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={380}
-                    height={380}
-                    className="w-full aspect-square object-cover img-grayscale"
-                  />
-                </motion.div>
-                <h3 className="mt-3 text-[2rem] leading-[1.05] tracking-[-0.02em] font-extrabold">{member.name}</h3>
-                <p className="text-[1.9rem] leading-[1.08] mt-2">{member.role}</p>
-                <Link href="/about" className="who-link">
-                  LinkedIn profile
-                </Link>
-              </motion.article>
-            ))}
-          </motion.div>
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            className="relative pt-6 mb-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div 
-              variants={itemVariants}
-              className="absolute inset-x-0 bottom-0 h-56 rounded-[56px] bg-[var(--who-pink)]" 
-            />
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full max-w-[560px] img-grayscale mx-auto"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1000&auto=format&fit=crop&q=80"
-                alt="Healthcare worker"
-                width={900}
-                height={680}
-                className="w-full"
-              />
+                About us
+              </Link>
             </motion.div>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring" }}
-            className="who-plus mb-7" 
-          />
-          <h2 className="who-title mb-4">Our vision</h2>
-          <p className="who-subtitle mb-5">The Kabalega Society Foundation shares a vision of a world where opportunity knows no bounds.</p>
-        </section>
-      </FadeIn>
+          </FadeIn>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, type: "spring" }}
-            className="who-plus mb-7" 
-          />
-          <h2 className="who-title mb-4">Our mission</h2>
-          <p className="who-subtitle mb-4">To ignite private funding and cultivate dynamic partnerships, championing health and protecting the vulnerable.</p>
-          <p className="who-copy">We bring the right people to the table to help fast-track health and education projects worldwide.</p>
-        </section>
-      </FadeIn>
+          <FadeIn direction="left" className="flex justify-center lg:justify-center">
+            <div className="relative mt-4 h-[240px] w-[180px] sm:h-[340px] sm:w-[250px] lg:mt-8 lg:h-[360px] lg:w-[270px]">
+              <span className="absolute left-5 top-3 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#1d71d8] sm:text-[18rem] lg:text-[20rem]">
+                ?
+              </span>
+              <span className="absolute left-0 top-0 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#20c4ea] sm:text-[18rem] lg:text-[20rem]">
+                ?
+              </span>
+              <span className="absolute left-3 top-6 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#ff2da0] sm:text-[18rem] lg:text-[20rem]">
+                ?
+              </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            className="relative h-56 mb-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div 
-              variants={itemVariants}
-              className="absolute left-0 top-0 h-8 w-[70%] rounded-r-full bg-[var(--who-cyan)] -rotate-[38deg] origin-left" 
-            />
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="img-grayscale absolute right-0 bottom-0 w-[70%] max-w-[360px]"
-            >
+      <section className="relative mx-auto max-w-[1600px] px-0 pb-24 pt-8 lg:pb-32">
+        <div className="pointer-events-none absolute left-[-12%] top-[10%] h-[120px] w-[78%] origin-left -rotate-[41deg] bg-[#22c1e8] sm:h-[150px] lg:h-[190px]" />
+        <div className="relative mx-auto grid max-w-[1240px] items-center gap-10 px-6 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16">
+          <FadeIn direction="right" className="relative min-h-[360px] lg:min-h-[760px]">
+            <div className="relative h-[360px] w-full sm:h-[480px] lg:absolute lg:bottom-0 lg:left-0 lg:h-[760px] lg:w-[640px]">
               <Image
-                src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=900&auto=format&fit=crop&q=80"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&auto=format&fit=crop&q=80"
                 alt="Founder portrait"
-                width={540}
-                height={480}
-                className="w-full"
+                fill
+                className="object-contain object-left-bottom grayscale"
               />
-            </motion.div>
-          </motion.div>
-          <motion.blockquote 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="who-quote"
-          >
-            "We have to create a healthier, more equitable future for everyone. By investing in communities and using a flexible, innovative, partnership-driven approach, our goal is to overcome today&apos;s challenges and ensure healthier lives tomorrow."
-          </motion.blockquote>
-        </section>
-      </FadeIn>
+            </div>
+          </FadeIn>
 
-      <FadeIn>
-        <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="who-band who-band-hello mb-8"
-          >
-            <span>Unique</span>
-          </motion.div>
-          <p className="who-subtitle mb-8">
-            We are an independent foundation, with the freedom to inspire change for better health. Our work supports local systems and wider social progress.
-          </p>
-          <motion.div 
-            className="relative pt-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-          >
-            <motion.div 
-              variants={itemVariants}
-              className="absolute inset-x-0 bottom-0 h-52 rounded-[56px] bg-[var(--who-pink)]/45" 
-            />
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="relative z-10 w-full max-w-[560px] img-grayscale mx-auto"
-            >
-              <Image
-                src="https://images.unsplash.com/photo-1634704784915-aacf363b021f?w=1000&auto=format&fit=crop&q=80"
-                alt="Volunteer smiling"
-                width={900}
-                height={700}
-                className="w-full"
-              />
-            </motion.div>
-          </motion.div>
-        </section>
-      </FadeIn>
-
-      <FadeIn>
-        <section className="pb-24 px-5 sm:px-8 max-w-6xl mx-auto">
-          <h2 className="who-title text-[var(--who-pink)] mb-12 text-center lg:text-left">We need you...</h2>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={containerVariants}
-          >
-            {needs.map((item, index) => (
-              <motion.article 
-                key={item.title} 
-                className={index === 2 ? "opacity-35" : ""}
-                variants={itemVariants}
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 300 }}
+          <FadeIn direction="left" className="relative z-10 max-w-[520px] lg:ml-auto lg:mr-6 lg:pt-16">
+            <blockquote className="text-[1.7rem] font-extrabold leading-[1.18] tracking-[-0.04em] text-[#4a5562] sm:text-[2.6rem] lg:text-[3.05rem]">
+              “We have to create a healthier, more equitable future for everyone. By investing in 8 billion lives and by using a flexible, innovative, partnership-driven approach, our goal is to overcome the health challenges of today and ensure healthy lives tomorrow.”
+            </blockquote>
+            <p className="mt-3 text-[0.78rem] font-semibold uppercase tracking-[0.08em] text-[#6b7280] sm:text-[0.88rem]">
+              Prof. Dr. Thomas Zeltner, Founder and Chair of the Board
+            </p>
+            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.98 }} className="mt-6">
+              <Link
+                href="/projects"
+                className="inline-flex rounded-full bg-[#ff2da0] px-4 py-2 text-[0.78rem] font-extrabold tracking-[-0.02em] text-white shadow-[0_10px_24px_rgba(255,45,160,0.24)] transition-colors hover:bg-[#ec1991]"
               >
-                <h3 className="text-[2.2rem] sm:text-[2.5rem] leading-[1.1] tracking-[-0.02em] font-extrabold mb-4">{item.title}</h3>
-                <p className="text-[1.6rem] sm:text-[1.8rem] leading-[1.4] text-[var(--who-text)] mb-5">{item.text}</p>
-                <motion.div whileHover={{ x: 4 }}>
-                  <Link href={item.href} className="who-read-more">
-                    Read more
-                  </Link>
-                </motion.div>
-              </motion.article>
-            ))}
-          </motion.div>
-        </section>
-      </FadeIn>
+                What we do
+              </Link>
+            </motion.div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1240px] px-6 pb-28 sm:px-10 lg:px-16 lg:pb-36">
+        <FadeIn direction="up" className="lg:ml-[180px]">
+          <h2 className="text-[3.2rem] font-extrabold leading-none tracking-[-0.06em] text-[#ff2da0] sm:text-[4.8rem]">
+            We need you...
+          </h2>
+        </FadeIn>
+
+        <div className="mt-8 grid gap-8 md:grid-cols-3 lg:ml-[180px] lg:max-w-[930px] lg:gap-10">
+          {needs.map((item, index) => (
+            <FadeIn key={item.title} delay={index * 120} direction="up">
+              <article>
+                <h3 className="text-[1.55rem] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#4a5562] sm:text-[2rem]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 max-w-[250px] text-[0.96rem] leading-[1.65] text-[#5d6773] sm:text-[1rem]">
+                  {item.text}
+                </p>
+                <Link
+                  href={item.href}
+                  className="mt-6 inline-block border-b border-[#58626f] pb-0.5 text-[0.85rem] font-medium text-[#58626f] transition-colors hover:border-[#ff2da0] hover:text-[#ff2da0]"
+                >
+                  Read more
+                </Link>
+              </article>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
