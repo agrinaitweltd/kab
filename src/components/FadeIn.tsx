@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 interface FadeInProps {
   children: React.ReactNode;
@@ -48,7 +48,7 @@ export default function FadeIn({
     return distances[direction];
   };
 
-  const variants = {
+  const variants: Variants = {
     hidden: {
       opacity: 0,
       ...getInitialPosition(),
@@ -59,7 +59,7 @@ export default function FadeIn({
       y: 0,
       transition: {
         duration,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };

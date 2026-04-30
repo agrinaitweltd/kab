@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "HOME" },
@@ -15,7 +15,7 @@ const navLinks = [
   { href: "/contact", label: "CONTACT" },
 ];
 
-const linkVariants = {
+const linkVariants: Variants = {
   hidden: { opacity: 0, x: -10 },
   visible: (i: number) => ({
     opacity: 1,
@@ -23,7 +23,7 @@ const linkVariants = {
     transition: {
       delay: i * 0.08,
       duration: 0.4,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   }),
   hover: {
@@ -149,7 +149,7 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.2, ease: "easeOut" as const }}
               className="fixed inset-0 bg-black/10 backdrop-blur-sm lg:hidden z-40"
               onClick={() => setMenuOpen(false)}
             />

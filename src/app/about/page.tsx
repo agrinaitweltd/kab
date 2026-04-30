@@ -184,7 +184,7 @@ export default function AboutPage() {
                         initial={{ scaleY: 0 }}
                         whileInView={{ scaleY: 1 }}
                         viewport={{ once: true }}
-                        transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" }}
+                        transition={{ delay: i * 0.15, duration: 0.8, ease: "easeOut" as const }}
                         style={{ originY: 0 }}
                       />
                     )}
