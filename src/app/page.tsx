@@ -143,18 +143,52 @@ export default function HomePage() {
 
       <FadeIn>
         <section className="pb-20 px-5 sm:px-8 max-w-6xl mx-auto">
-          <h2 className="who-title mb-6">How do we achieve this?</h2>
-          <p className="who-copy mb-5">
-            We are here to help communities and partners aid critical development projects across Bunyoro: protecting children from disease, helping women give birth safely, and supporting hospitals with essential medicines.
-          </p>
-          <p className="who-copy mb-8">
-            We also bring together people solving urgent health challenges with those who can fund their work, paving the way for innovation and stronger local systems.
-          </p>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/about" className="btn-pink">
-              About us
-            </Link>
-          </motion.div>
+          <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-center">
+            <div>
+              <h2 className="who-title mb-6">How do we achieve this?</h2>
+              <p className="who-copy mb-5">
+                We are here to help the World Health Organization and its partners aid critical health projects across the Bunyoro: protecting children from disease, helping women give birth safely, and supporting hospitals with essential medicines.
+              </p>
+              <p className="who-copy mb-8">
+                But that's not all we do. We bring together the people trying to solve the world's most urgent health challenges with those who can fund their work. This funding paves the way for innovations in health technology and more sustainable health systems, helping to make the world a better place, in more places.
+              </p>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link href="/about" className="btn-pink">
+                  About us
+                </Link>
+              </motion.div>
+            </div>
+            <motion.div 
+              className="hidden lg:block relative w-48 h-48 flex-shrink-0"
+              initial={{ opacity: 0, rotate: -10, scale: 0.8 }}
+              whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, type: "spring", stiffness: 200 }}
+              whileHover={{ rotate: 5, scale: 1.1 }}
+            >
+              <svg viewBox="0 0 200 200" className="w-full h-full">
+                {/* Question mark shape */}
+                <defs>
+                  <linearGradient id="questionGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{ stopColor: 'var(--who-cyan)', stopOpacity: 1 }} />
+                    <stop offset="100%" style={{ stopColor: 'var(--who-blue)', stopOpacity: 1 }} />
+                  </linearGradient>
+                  <linearGradient id="questionGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{ stopColor: 'var(--who-pink)', stopOpacity: 1 }} />
+                    <stop offset="100%" style={{ stopColor: 'var(--who-blue)', stopOpacity: 1 }} />
+                  </linearGradient>
+                </defs>
+                {/* Top curve of question mark */}
+                <path d="M 60 50 Q 60 20, 90 20 Q 120 20, 120 50 Q 120 70, 100 85 L 100 110" 
+                      fill="none" 
+                      stroke="url(#questionGrad1)" 
+                      strokeWidth="24" 
+                      strokeLinecap="round"/>
+                {/* Dot of question mark */}
+                <circle cx="100" cy="145" r="15" fill="url(#questionGrad2)"/>
+              </svg>
+            </motion.div>
+          </div>
         </section>
       </FadeIn>
 
@@ -534,18 +568,9 @@ export default function HomePage() {
 
       <FadeIn>
         <section className="pb-24 px-5 sm:px-8 max-w-6xl mx-auto">
+          <h2 className="who-title text-[var(--who-pink)] mb-12 text-center lg:text-left">We need you...</h2>
           <motion.div 
-            className="text-center mb-8"
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          >
-            <span className="who-question">?</span>
-          </motion.div>
-          <h2 className="who-title text-[var(--who-pink)] mb-8">We need you...</h2>
-          <motion.div 
-            className="space-y-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -556,11 +581,11 @@ export default function HomePage() {
                 key={item.title} 
                 className={index === 2 ? "opacity-35" : ""}
                 variants={itemVariants}
-                whileHover={{ x: 8, scale: 1.02 }}
+                whileHover={{ y: -8 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <h3 className="text-[3.1rem] leading-[1] tracking-[-0.02em] font-extrabold mb-3">{item.title}</h3>
-                <p className="who-copy mb-5">{item.text}</p>
+                <h3 className="text-[2.2rem] sm:text-[2.5rem] leading-[1.1] tracking-[-0.02em] font-extrabold mb-4">{item.title}</h3>
+                <p className="text-[1.6rem] sm:text-[1.8rem] leading-[1.4] text-[var(--who-text)] mb-5">{item.text}</p>
                 <motion.div whileHover={{ x: 4 }}>
                   <Link href={item.href} className="who-read-more">
                     Read more
