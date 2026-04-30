@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, School, Wheat, Users, Heart, TrendingUp } from "lucide-react";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 
 const projects = [
@@ -140,13 +141,18 @@ export default function ProjectsPage() {
                       ))}
                     </div>
 
-                    <Link
-                      href="/donate"
-                      className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-100"
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      Support This Program
-                      <ArrowRight size={18} />
-                    </Link>
+                      <Link
+                        href="/donate"
+                        className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-lg active:scale-100"
+                      >
+                        Support This Program
+                        <ArrowRight size={18} />
+                      </Link>
+                    </motion.div>
                   </div>
                 </FadeIn>
               </div>
@@ -157,7 +163,18 @@ export default function ProjectsPage() {
 
       {/* CTA */}
       <section className="py-20 md:py-28 bg-gradient-to-br from-[#1F3A6D] to-[#162D56] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-40" style={{ backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djEwaC0xMFYxNmgxMHpNMTQgNDZ2MTBoMTBWNDZIMTR6TTM2IDM2djEwaC0xMFYzNmgxMHpNNTYgMzZ2MTBoMTBWMzZINTZ6Ii8+PC9nPjwvZz48L3N2Zz4')` }} />
+        <motion.div 
+          className="absolute inset-0 opacity-40" 
+          style={{ backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2djEwaC0xMFYxNmgxMHpNMTQgNDZ2MTBoMTBWNDZIMTR6TTM2IDM2djEwaC0xMFYzNmgxMHpNNTYgMzZ2MTBoMTBWMzZINTZ6Ii8+PC9nPjwvZz48L3N2Zz4')` }}
+          animate={{ 
+            backgroundPosition: ['0% 0%', '100% 100%'],
+          }}
+          transition={{ 
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse" as const,
+          }}
+        />
         
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
@@ -168,20 +185,24 @@ export default function ProjectsPage() {
               Your support helps us provide education, skills training, and sustainable livelihoods to families across Bunyoro.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/donate"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#1F3A6D] font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-xl hover:scale-105 active:scale-100"
-              >
-                Make a Donation
-                <Heart size={18} className="fill-current" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-4 rounded-lg border-2 border-white/20 transition-all duration-200"
-              >
-                Partner With Us
-                <ArrowRight size={18} />
-              </Link>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/donate"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#1F3A6D] font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-xl"
+                >
+                  Make a Donation
+                  <Heart size={18} className="fill-current" />
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-4 rounded-lg border-2 border-white/20 transition-all duration-200"
+                >
+                  Partner With Us
+                  <ArrowRight size={18} />
+                </Link>
+              </motion.div>
             </div>
           </FadeIn>
         </div>

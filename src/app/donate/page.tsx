@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Heart, RefreshCw, Zap, School, Wheat, Users, CheckCircle2, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 
 const presetAmounts = [10, 25, 50, 100, 250, 500];
@@ -43,9 +44,11 @@ export default function DonatePage() {
             Your generous donation of <strong>£{finalAmount}</strong> {donationType === "monthly" ? "per month " : ""}will make a real difference in Bunyoro.
           </p>
           <p className="text-gray-500 mb-8">A confirmation will be sent to <strong>{formData.email}</strong>.</p>
-          <Link href="/" className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-3 rounded-full transition-all">
-            Back to Home <ArrowRight size={16} />
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/" className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-3 rounded-full transition-all">
+              Back to Home <ArrowRight size={16} />
+            </Link>
+          </motion.div>
         </FadeIn>
       </div>
     );

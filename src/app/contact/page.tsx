@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { MapPin, Mail, Phone, Send, CheckCircle2, MessageSquare, HelpCircle } from "lucide-react";
+import { motion } from "framer-motion";
 import FadeIn from "@/components/FadeIn";
 
 const faqs = [
@@ -37,9 +38,11 @@ export default function ContactPage() {
           <p className="text-gray-600 text-lg mb-8">
             Thank you for reaching out, <strong>{formData.name}</strong>. We''ll respond to <strong>{formData.email}</strong> within 24-48 hours.
           </p>
-          <Link href="/" className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-lg">
-            Back to Home
-          </Link>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Link href="/" className="inline-flex items-center gap-2 bg-[#1F3A6D] hover:bg-[#162D56] text-white font-semibold px-8 py-4 rounded-lg transition-all hover:shadow-lg">
+              Back to Home
+            </Link>
+          </motion.div>
         </FadeIn>
       </div>
     );
