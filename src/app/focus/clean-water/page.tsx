@@ -4,18 +4,27 @@ import Link from "next/link";
 export default function CleanWaterFocusPage() {
   return (
     <main>
-      <section className="relative bg-gradient-to-br from-gray-50 to-white pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div className="absolute left-0 top-20 w-[500px] h-28 bg-[#1F3A6D] rounded-r-full opacity-90" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <p className="text-xs font-bold uppercase tracking-widest text-[#33c6de] mb-4">Areas of Focus</p>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#5A6270] leading-tight mb-6">
-              Clean <span className="text-[#1F3A6D]">Water</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-[#5A6270] max-w-3xl mx-auto leading-relaxed">
-              Bringing safe, accessible water to rural communities across Bunyoro — reducing disease, saving time, and restoring dignity.
-            </p>
-          </FadeIn>
+      {/* Hero */}
+      <section className="pt-24 pb-0 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-0 items-end min-h-[460px]">
+            <FadeIn direction="left">
+              <div className="py-16 lg:py-24 pr-8">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#33c6de] mb-4">Areas of Focus</p>
+                <h1 className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 text-[#1F3A6D]">Clean Water</h1>
+                <p className="text-base text-[#5A6270] max-w-md leading-relaxed">
+                  Bringing safe, accessible water to rural communities across Bunyoro — reducing disease, saving time, and restoring dignity.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn direction="right">
+              <div className="relative flex justify-center items-end h-[440px]">
+                <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#1F3A6D] rounded-full" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="https://images.unsplash.com/photo-1526040652367-ac003a0475fe?w=600&auto=format&fit=crop&q=80" alt="Community member" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

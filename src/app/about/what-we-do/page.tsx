@@ -5,38 +5,38 @@ const programs = [
   {
     title: "Education Support",
     description:
-      "We fund school fees, provide learning materials, and build classrooms for underprivileged children across Bunyoro — ensuring every child can access quality education.",
-    icon: "📚",
+      "We fund school fees, provide learning materials, and build classrooms for underprivileged children across Bunyoro. Since 2016 we have supported over 1,400 scholars and built more than 60 classrooms, keeping children in school and giving them a pathway to a better future.",
+    color: "#1F3A6D",
   },
   {
     title: "Agricultural Development",
     description:
-      "Through hands-on training and resource provision, we help smallholder farmers increase yields, adopt sustainable practices, and achieve food security.",
-    icon: "🌾",
+      "Through farmer training schools, improved seed access, and cooperative development, we help smallholder farmers increase yields by up to 40%. Sustainable practices build long-term resilience against climate shocks and ensure food security for thousands of families.",
+    color: "#33c6de",
   },
   {
     title: "Clean Water Access",
     description:
-      "We construct boreholes and rainwater harvesting systems in rural communities, reducing waterborne diseases and saving hours of daily labour.",
-    icon: "💧",
+      "Over 80 boreholes and numerous rainwater harvesting systems now serve more than 40,000 people across Bunyoro. Each project includes a community water committee trained in maintenance and a full hygiene education programme to maximise long-term impact.",
+    color: "#e91e8c",
   },
   {
     title: "Healthcare Outreach",
     description:
-      "Mobile health clinics and community health worker programs deliver essential medical care to remote villages across the region.",
-    icon: "🏥",
+      "Monthly mobile health clinics reach over 20 villages, delivering consultations, vaccinations, antenatal care, and medications to communities hours from the nearest health facility. Our community health worker programme provides year-round frontline support between visits.",
+    color: "#1F3A6D",
   },
   {
     title: "Youth Empowerment",
     description:
-      "Vocational skills centres and mentorship programs equip young people with the tools to build sustainable livelihoods.",
-    icon: "🎯",
+      "Four vocational skills centres across the region offer training in carpentry, tailoring, mechanics, ICT, and catering. Entrepreneurship workshops, seed funding competitions, and a mentorship network give young people the confidence and tools to build independent livelihoods.",
+    color: "#33c6de",
   },
   {
     title: "Women's Empowerment",
     description:
-      "Savings cooperatives, business training, and advocacy programs help women gain economic independence and community leadership roles.",
-    icon: "👩‍💼",
+      "Over 80 village savings and loan associations support more than 2,000 women to access credit and build financial assets. Business training, legal rights education, and leadership development programmes help women step into economic independence and community leadership.",
+    color: "#e91e8c",
   },
 ];
 
@@ -67,16 +67,30 @@ export default function WhatWeDoPage() {
             {programs.map((program) => (
               <FadeIn key={program.title}>
                 <div className="bg-gray-50 rounded-2xl p-8 h-full hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-                  <div className="text-4xl mb-4">{program.icon}</div>
+                  <div className="w-10 h-1 rounded-full mb-5" style={{ backgroundColor: program.color }} />
                   <h3 className="text-xl font-bold text-[#1F3A6D] mb-3">
                     {program.title}
                   </h3>
-                  <p className="text-[#5A6270] leading-relaxed">
+                  <p className="text-[#5A6270] leading-relaxed text-sm">
                     {program.description}
                   </p>
                 </div>
               </FadeIn>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <section className="py-0 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-3 h-56 sm:h-72">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80" alt="Students in class" className="w-full h-full object-cover grayscale" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://images.unsplash.com/photo-1526040652367-ac003a0475fe?w=600&auto=format&fit=crop&q=80" alt="Community member" className="w-full h-full object-cover grayscale" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="https://images.unsplash.com/photo-1591992461380-f20c0e40a3ce?w=600&auto=format&fit=crop&q=80" alt="Farmers working" className="w-full h-full object-cover grayscale" />
           </div>
         </div>
       </section>
