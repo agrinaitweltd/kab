@@ -51,15 +51,17 @@ export default function FadeIn({
   const variants: Variants = {
     hidden: {
       opacity: 0,
+      filter: "blur(6px)",
       ...getInitialPosition(),
     },
     visible: {
       opacity: 1,
+      filter: "blur(0px)",
       x: 0,
       y: 0,
       transition: {
         duration,
-        ease: "easeOut" as const,
+        ease: [0.25, 0.46, 0.45, 0.94] as const,
       },
     },
   };

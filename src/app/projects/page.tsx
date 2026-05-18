@@ -96,14 +96,19 @@ export default function ProjectsPage() {
                     
                     {/* Stats Overlay */}
                     <div className="absolute -bottom-6 left-6 right-6 grid grid-cols-3 gap-3">
-                      {project.stats.map((stat) => (
-                        <div
+                      {project.stats.map((stat, si) => (
+                        <motion.div
                           key={stat.label}
                           className="bg-white rounded-xl p-4 shadow-lg text-center border border-gray-100"
+                          initial={{ opacity: 0, y: 20, scale: 0.85 }}
+                          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: si * 0.12 + 0.3, duration: 0.5, type: "spring", stiffness: 280, damping: 22 }}
+                          whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.12)" }}
                         >
                           <p className="text-2xl md:text-3xl font-bold text-[#1F3A6D]">{stat.value}</p>
                           <p className="text-xs text-gray-600 mt-1">{stat.label}</p>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
                   </div>
@@ -132,12 +137,19 @@ export default function ProjectsPage() {
                     {/* Impact List */}
                     <div className="space-y-3 mb-8">
                       {project.impact.map((item, i) => (
-                        <div key={i} className="flex items-start gap-3">
+                        <motion.div
+                          key={i}
+                          className="flex items-start gap-3"
+                          initial={{ opacity: 0, x: -16 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.1, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        >
                           <div className="w-6 h-6 rounded-full bg-[#1F3A6D]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                             <div className="w-2 h-2 rounded-full bg-blue-600" />
                           </div>
                           <p className="text-gray-600 leading-relaxed">{item}</p>
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
 

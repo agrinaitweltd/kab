@@ -29,10 +29,22 @@ export default function HomePage() {
       <section className="mx-auto max-w-[1240px] px-6 pb-20 pt-28 sm:px-10 lg:px-16 lg:pb-28 lg:pt-36">
         <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-6">
           <FadeIn direction="down" className="relative z-10 max-w-[360px] lg:ml-16">
-            <div className="relative mb-8 h-[28px] w-[268px] rounded-r-full bg-[#f7c85c] sm:h-[34px] sm:w-[330px]">
-              <h1 className="absolute -right-4 -top-7 text-[3.9rem] font-extrabold leading-none tracking-[-0.06em] text-[#ff2da0] sm:text-[5.4rem]">
+            <div className="relative mb-8 h-[28px] w-[268px] rounded-r-full sm:h-[34px] sm:w-[330px] overflow-hidden">
+              <motion.div
+                className="absolute inset-0 rounded-r-full bg-[#f7c85c]"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+                style={{ originX: 0 }}
+              />
+              <motion.h1
+                className="absolute -right-4 -top-7 text-[3.9rem] font-extrabold leading-none tracking-[-0.06em] text-[#ff2da0] sm:text-[5.4rem]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+              >
                 Hello.
-              </h1>
+              </motion.h1>
             </div>
 
             <p className="max-w-[280px] text-[1.95rem] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#4a5562] sm:max-w-[330px] sm:text-[2.65rem]">
@@ -93,22 +105,41 @@ export default function HomePage() {
 
           <FadeIn direction="left" className="flex justify-center lg:justify-center">
             <div className="relative mt-4 h-[240px] w-[180px] sm:h-[340px] sm:w-[250px] lg:mt-8 lg:h-[360px] lg:w-[270px]">
-              <span className="absolute left-5 top-3 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#1d71d8] sm:text-[18rem] lg:text-[20rem]">
+              <motion.span
+                className="absolute left-5 top-3 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#1d71d8] sm:text-[18rem] lg:text-[20rem]"
+                animate={{ y: [0, -14, 0] }}
+                transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut", delay: 0 }}
+              >
                 ?
-              </span>
-              <span className="absolute left-0 top-0 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#20c4ea] sm:text-[18rem] lg:text-[20rem]">
+              </motion.span>
+              <motion.span
+                className="absolute left-0 top-0 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#20c4ea] sm:text-[18rem] lg:text-[20rem]"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+              >
                 ?
-              </span>
-              <span className="absolute left-3 top-6 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#ff2da0] sm:text-[18rem] lg:text-[20rem]">
+              </motion.span>
+              <motion.span
+                className="absolute left-3 top-6 text-[13rem] font-extrabold leading-none tracking-[-0.1em] text-[#ff2da0] sm:text-[18rem] lg:text-[20rem]"
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
+              >
                 ?
-              </span>
+              </motion.span>
             </div>
           </FadeIn>
         </div>
       </section>
 
       <section className="relative mx-auto max-w-[1600px] px-0 pb-24 pt-8 lg:pb-32">
-        <div className="pointer-events-none absolute left-[-12%] top-[10%] h-[120px] w-[78%] origin-left -rotate-[41deg] bg-[#22c1e8] sm:h-[150px] lg:h-[190px]" />
+        <motion.div
+          className="pointer-events-none absolute left-[-12%] top-[10%] h-[120px] w-[78%] origin-left -rotate-[41deg] bg-[#22c1e8] sm:h-[150px] lg:h-[190px]"
+          initial={{ scaleX: 0, opacity: 0 }}
+          whileInView={{ scaleX: 1, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+          style={{ originX: 0 }}
+        />
         <div className="relative mx-auto grid max-w-[1240px] items-center gap-10 px-6 sm:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-16">
           <FadeIn direction="right" className="relative min-h-[360px] lg:min-h-[760px]">
             <div className="relative h-[360px] w-full sm:h-[480px] lg:absolute lg:bottom-0 lg:left-0 lg:h-[760px] lg:w-[640px]">
@@ -150,7 +181,11 @@ export default function HomePage() {
         <div className="mt-8 grid gap-8 md:grid-cols-3 lg:ml-[180px] lg:max-w-[930px] lg:gap-10">
           {needs.map((item, index) => (
             <FadeIn key={item.title} delay={index * 120} direction="up">
-              <article>
+              <motion.article
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="cursor-default"
+              >
                 <h3 className="text-[1.55rem] font-extrabold leading-[1.05] tracking-[-0.04em] text-[#4a5562] sm:text-[2rem]">
                   {item.title}
                 </h3>
@@ -163,7 +198,7 @@ export default function HomePage() {
                 >
                   Read more
                 </Link>
-              </article>
+              </motion.article>
             </FadeIn>
           ))}
         </div>
