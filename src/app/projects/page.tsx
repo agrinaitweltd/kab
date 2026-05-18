@@ -14,7 +14,7 @@ const projects = [
     subtitle: "Keeping children in class, one term at a time",
     description: "Every year, thousands of children in Bunyoro are forced to drop out of school because their families cannot afford tuition fees. Our School Fees Support Program directly pays school fees for identified underprivileged children from primary through secondary school.",
     impact: ["1,200+ students sponsored annually", "92% school retention rate among beneficiaries", "Covering 60+ schools across Bunyoro", "Priority given to orphans and girls"],
-    img: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&auto=format&fit=crop&q=80",
+    img: "/project-education.png",
     stats: [{ label: "Students", value: "1,200+" }, { label: "Schools", value: "60+" }, { label: "Retention", value: "92%" }],
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     subtitle: "Feeding families, building livelihoods",
     description: "Bunyoro has some of the most fertile land in East Africa, yet many smallholder farmers struggle due to outdated techniques and limited inputs. Our Agriculture Initiative provides training, tools, and market linkages to transform subsistence farmers into sustainable producers.",
     impact: ["300+ farming families trained", "Modern techniques: crop rotation, irrigation, organic farming", "Seed banks and cooperative market systems", "Average income increase of 60% among participants"],
-    img: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&auto=format&fit=crop&q=80",
+    img: "/project-agriculture.png",
     stats: [{ label: "Families", value: "300+" }, { label: "Income +", value: "60%" }, { label: "Crops", value: "12" }],
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     subtitle: "Building the next generation of leaders",
     description: "Youth unemployment is one of the most pressing challenges facing Bunyoro. Our Youth Empowerment Program offers vocational training, entrepreneurship education, mentorship, and startup grants to give young people the practical skills to build successful futures.",
     impact: ["500+ youth trained in vocational skills", "Courses: tailoring, carpentry, IT, agribusiness", "Mentorship from local business leaders", "Startup seed grants for top graduates"],
-    img: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&auto=format&fit=crop&q=80",
+    img: "/project-youth.png",
     stats: [{ label: "Youth", value: "500+" }, { label: "Skills", value: "8" }, { label: "Employed", value: "74%" }],
   },
   {
@@ -44,7 +44,7 @@ const projects = [
     subtitle: "Building infrastructure for tomorrow",
     description: "Strong communities need more than individual support—they need infrastructure, services, and systems that work for everyone. Our Community Development Projects fund clean water access, healthcare outreach, women''s groups, and village-level infrastructure improvements.",
     impact: ["45+ villages with active programs", "Clean water access for 5,000+ people", "Monthly healthcare outreach clinics", "Women''s savings and credit groups"],
-    img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&auto=format&fit=crop&q=80",
+    img: "/project-emergency.png",
     stats: [{ label: "Villages", value: "45+" }, { label: "People", value: "5,000+" }, { label: "Groups", value: "22" }],
   },
 ];

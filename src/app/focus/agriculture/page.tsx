@@ -21,7 +21,7 @@ export default function AgricultureFocusPage() {
               <div className="relative flex justify-center items-end h-[440px]">
                 <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#33c6de] rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://images.unsplash.com/photo-1591992461380-f20c0e40a3ce?w=600&auto=format&fit=crop&q=80" alt="Farmers working" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+                <img src="/focus-agriculture.png" alt="Farmers working" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
               </div>
             </FadeIn>
           </div>

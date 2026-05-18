@@ -5,37 +5,37 @@ const team = [
     name: "Mr. John Byamukama",
     role: "Executive Director",
     bio: "John has led the foundation since its inception in 2016, driving strategy and building partnerships across the Bunyoro region and internationally.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+    img: "/team-john.png",
   },
   {
     name: "Dr. Grace Tumwesigye",
     role: "Director of Programs",
     bio: "Grace oversees all field programmes, ensuring quality delivery and measuring community impact across education, health, and agriculture initiatives.",
-    img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=80",
+    img: "/team-grace.png",
   },
   {
     name: "Mr. Robert Kagoro",
     role: "Finance & Operations",
     bio: "Robert manages financial stewardship and operational efficiency, maintaining the highest standards of accountability to donors and communities.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+    img: "/team-robert.png",
   },
   {
     name: "Ms. Patience Akello",
     role: "Community Liaison",
     bio: "Patience bridges the foundation and the communities we serve, ensuring programmes remain community-led and culturally sensitive.",
-    img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&auto=format&fit=crop&q=80",
+    img: "/team-patience.png",
   },
   {
     name: "Mr. David Mwesiga",
     role: "Agriculture Programme Lead",
     bio: "David brings 15 years of agronomy experience and leads our farmer training and sustainable agriculture initiatives across 30+ villages.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+    img: "/team-member5.png",
   },
   {
     name: "Ms. Sarah Nakirya",
     role: "Education Programme Lead",
     bio: "Sarah coordinates school partnerships, scholarship programmes, and classroom construction projects to ensure access to quality education.",
-    img: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&auto=format&fit=crop&q=80",
+    img: "/team-member6.png",
   },
 ];
 

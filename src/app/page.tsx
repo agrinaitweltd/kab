@@ -54,7 +54,7 @@ export default function HomePage() {
               <div className="absolute bottom-2 left-[11%] right-[5%] h-[90px] rounded-full bg-[#ff2da0] sm:h-[112px] lg:h-[124px]" />
               <div className="relative mx-auto aspect-[1.25/1] w-full max-w-[500px] lg:mr-12 lg:max-w-[540px]">
                 <Image
-                  src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=1200&auto=format&fit=crop&q=80"
+                  src="/hero.png"
                   alt="Mother holding child"
                   fill
                   priority
@@ -113,7 +113,7 @@ export default function HomePage() {
           <FadeIn direction="right" className="relative min-h-[360px] lg:min-h-[760px]">
             <div className="relative h-[360px] w-full sm:h-[480px] lg:absolute lg:bottom-0 lg:left-0 lg:h-[760px] lg:w-[640px]">
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&auto=format&fit=crop&q=80"
+                src="/home-person.png"
                 alt="Founder portrait"
                 fill
                 className="object-contain object-left-bottom grayscale"

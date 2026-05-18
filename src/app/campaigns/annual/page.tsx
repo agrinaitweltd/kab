@@ -20,7 +20,7 @@ export default function AnnualAppealPage() {
               <div className="relative flex justify-center items-end h-[440px]">
                 <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#33c6de] rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&auto=format&fit=crop&q=80" alt="Community" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+                <img src="/campaign-annual.png" alt="Community" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
               </div>
             </FadeIn>
           </div>

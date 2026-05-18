@@ -16,10 +16,10 @@ const timeline = [
 ];
 
 const leadership = [
-  { name: "Mr. John Byamukama", role: "Executive Director", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80" },
-  { name: "Dr. Grace Tumwesigye", role: "Director of Programs", img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&auto=format&fit=crop&q=80" },
-  { name: "Mr. Robert Kagoro", role: "Finance & Operations", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80" },
-  { name: "Ms. Patience Akello", role: "Community Liaison", img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&auto=format&fit=crop&q=80" },
+  { name: "Mr. John Byamukama", role: "Executive Director", img: "/team-john.png" },
+  { name: "Dr. Grace Tumwesigye", role: "Director of Programs", img: "/team-grace.png" },
+  { name: "Mr. Robert Kagoro", role: "Finance & Operations", img: "/team-robert.png" },
+  { name: "Ms. Patience Akello", role: "Community Liaison", img: "/team-patience.png" },
 ];
 
 export default function AboutPage() {
@@ -53,7 +53,7 @@ export default function AboutPage() {
               >
                 <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&auto=format&fit=crop&q=80"
+                    src="/about-hero.png"
                     alt="Community in Bunyoro"
                     fill
                     className="object-cover img-grayscale group-hover:scale-110 transition-transform duration-700"

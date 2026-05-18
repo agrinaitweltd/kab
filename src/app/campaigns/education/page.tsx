@@ -20,7 +20,7 @@ export default function EducationCampaignPage() {
               <div className="relative flex justify-center items-end h-[440px]">
                 <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#e91e8c] rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80" alt="Students" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+                <img src="/campaign-education.png" alt="Students" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
               </div>
             </FadeIn>
           </div>

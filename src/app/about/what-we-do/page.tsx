@@ -86,11 +86,11 @@ export default function WhatWeDoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-3 gap-3 h-56 sm:h-72">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&auto=format&fit=crop&q=80" alt="Students in class" className="w-full h-full object-cover grayscale" />
+            <img src="/what-education.png" alt="Students in class" className="w-full h-full object-cover grayscale" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1526040652367-ac003a0475fe?w=600&auto=format&fit=crop&q=80" alt="Community member" className="w-full h-full object-cover grayscale" />
+            <img src="/what-clean-water.png" alt="Community member" className="w-full h-full object-cover grayscale" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="https://images.unsplash.com/photo-1591992461380-f20c0e40a3ce?w=600&auto=format&fit=crop&q=80" alt="Farmers working" className="w-full h-full object-cover grayscale" />
+            <img src="/what-agriculture.png" alt="Farmers working" className="w-full h-full object-cover grayscale" />
           </div>
         </div>
       </section>

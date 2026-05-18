@@ -21,7 +21,7 @@ export default function HealthcareFocusPage() {
               <div className="relative flex justify-center items-end h-[440px]">
                 <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#e91e8c] rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=600&auto=format&fit=crop&q=80" alt="Healthcare worker" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+                <img src="/focus-healthcare.png" alt="Healthcare worker" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
               </div>
             </FadeIn>
           </div>

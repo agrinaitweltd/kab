@@ -21,7 +21,7 @@ export default function DigitalLiteracyFocusPage() {
               <div className="relative flex justify-center items-end h-[440px]">
                 <div className="absolute bottom-10 left-4 right-4 h-44 bg-[#1F3A6D] rounded-full" />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=80" alt="Digital skills training" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
+                <img src="/focus-digital-literacy.png" alt="Digital skills training" className="relative z-10 h-[400px] w-72 object-cover object-top grayscale" />
               </div>
             </FadeIn>
           </div>
